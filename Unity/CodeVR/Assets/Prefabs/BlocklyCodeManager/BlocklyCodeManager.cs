@@ -8,9 +8,9 @@ public class BlocklyCodeManager : MonoBehaviour
     [SerializeField] private CodeBlockManager _blockManager;
     [SerializeField] private VariableDeclarationManager _variableDeclarationManager;
 
-    public void GenerateBlocklyCode()
+    public string GenerateBlocklyCode()
     {
-        if (this._blockManager == null) return;
+        if (this._blockManager == null) return string.Empty;
         var blockClusters = new List<CodeBlock>();
 
         foreach (var block in this._blockManager.AllCodeBlocks)
@@ -24,5 +24,7 @@ public class BlocklyCodeManager : MonoBehaviour
         StartCoroutine(
             WebsiteConnection.UpdateBlocklyCode(blocklyString)
         );
+        return blocklyString;
     }
+    
 }

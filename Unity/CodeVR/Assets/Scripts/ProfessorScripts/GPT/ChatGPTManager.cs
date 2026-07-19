@@ -169,7 +169,8 @@ public class ChatGPTManager : MonoBehaviour
 
         if (ConversationAnimation != null)
         {
-            ConversationAnimation.SetSpeakingAnimation(1);
+            var random = new System.Random();
+            ConversationAnimation.SetSpeakingAnimation(random.Next(1, 4));
         }
 
         if (TTSapi == TTSAPI.ElevenLabsTTS)

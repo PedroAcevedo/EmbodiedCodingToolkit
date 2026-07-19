@@ -16,6 +16,7 @@ public class CodeBlockConnectionManager : MonoBehaviour
 
     [Header("IF enabled, connection can be made by pressing the key (C). Must be disabled during production!")]
     [SerializeField] private bool _debugMode = false;
+    [SerializeField] private ChatGPTManager _chatGPTManager;
 
     private BlocklyCodeManager _blocklyCodeManager;
 
@@ -27,6 +28,7 @@ public class CodeBlockConnectionManager : MonoBehaviour
 
     void Start()
     {
+        this._chatGPTManager = FindObjectOfType<ChatGPTManager>();
         this._leftController.selectExited.AddListener(OnDropBlock);
         this._rightController.selectExited.AddListener(OnDropBlock);
 
@@ -175,7 +177,17 @@ public class CodeBlockConnectionManager : MonoBehaviour
         toConnector.BlockAttachedTo.RealignBlockCluster();
 
         if (!quiet)
-            this._blocklyCodeManager.GenerateBlocklyCode();
+        {
+            var blocklyCode = this._blocklyCodeManager.GenerateBlocklyCode();
+            _chatGPTManager.AskChatGPT(
+                $"The student connected the block '{fromConnector.BlockAttachedTo.name}' " +
+                $"to the block '{toConnector.BlockAttachedTo.name}'. " +
+                $"Respond as a coding tutor and briefly explain whether this " +
+                $"connection makes sense.");
+        }
+
+
+        
     }
 
     private IEnumerator DelayedRealignBlocks(CodeBlockConnector connector)

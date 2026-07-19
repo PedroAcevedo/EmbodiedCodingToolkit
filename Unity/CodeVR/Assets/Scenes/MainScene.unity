@@ -1527,8 +1527,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextToSpeech: {fileID: 907172902}
-  OutputTranscript: {fileID: 673948904}
-  ConversationAnimation: {fileID: 1129810245}
+  OutputTranscript: {fileID: 0}
+  ConversationAnimation: {fileID: 0}
   loadingAnimatorObject: {fileID: 1919472148}
   LLMapi: 1
   OpenAIModel: gpt-4o
@@ -10693,7 +10693,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1129810246}
-  - component: {fileID: 1129810245}
+  - component: {fileID: 1129810247}
   m_Layer: 0
   m_Name: ConversationAnim
   m_TagString: Untagged
@@ -10701,19 +10701,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1129810245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129810244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d162a7f0ffccf9b47b0f90b3e6e2cd35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Anim: {fileID: 1738890952}
 --- !u!4 &1129810246
 Transform:
   m_ObjectHideFlags: 0
@@ -10729,6 +10716,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1129810247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129810244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d162a7f0ffccf9b47b0f90b3e6e2cd35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Anim: {fileID: 1738890952}
 --- !u!1001 &1160091535
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11440,7 +11440,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1585501014}
   - component: {fileID: 1585501013}
-  - component: {fileID: 1585501015}
   m_Layer: 0
   m_Name: ProfessorCharacter
   m_TagString: Untagged
@@ -11485,20 +11484,6 @@ Transform:
   - {fileID: 1738890951}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 224.628, z: 0}
---- !u!114 &1585501015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1585501012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0e2243033c8cb64aba5690e56a9d08e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 1738890952}
-  speakType: 0
 --- !u!4 &1587434805 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7985744678476896490, guid: f08d3bf9d4fa14edc8bb85904a0a9f69, type: 3}

@@ -21,12 +21,12 @@ public class ConversationAnimation : MonoBehaviour
 
     public void StartAnimation()
     {
-        Anim.SetInteger("speaktype", speaktype);
+        Anim.SetInteger("SpeakType", speaktype);
     }
 
     public void EndAnimation()
     {
-        Anim.SetInteger("speaktype", 0);
+        Anim.SetInteger("SpeakType", 0);
     }
 
 
