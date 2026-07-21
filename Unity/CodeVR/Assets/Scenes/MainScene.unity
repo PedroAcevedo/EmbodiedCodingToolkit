@@ -1528,7 +1528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextToSpeech: {fileID: 907172902}
   OutputTranscript: {fileID: 0}
-  ConversationAnimation: {fileID: 0}
+  ConversationAnimation: {fileID: 1129810247}
   loadingAnimatorObject: {fileID: 1919472148}
   LLMapi: 1
   OpenAIModel: gpt-4o
@@ -1934,8 +1934,8 @@ MonoBehaviour:
   nextButton: {fileID: 0}
   configuration: {fileID: 11400000, guid: e5e2f7691bceeee4793621f575e6beb3, type: 2}
   voice:
-    name: 
-    id: 
+    name: Sarah - Mature, Reassuring, Confident
+    id: EXAVITQu4vr4xnSDxMaL
   audioSource: {fileID: 907172905}
   ConverseAnim: {fileID: 1129810244}
   ChatGPTManager: {fileID: 673948904}
@@ -12018,13 +12018,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919472148}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.70361483, y: -3.628692, z: 17.868954}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0.92511696, z: -0, w: -0.3796823}
+  m_LocalPosition: {x: 1.759, y: 1.756, z: 0.157}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 224.628, z: 0}
 --- !u!1001 &1971674054
 PrefabInstance:
   m_ObjectHideFlags: 0

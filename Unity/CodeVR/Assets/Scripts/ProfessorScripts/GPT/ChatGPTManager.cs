@@ -141,6 +141,7 @@ public class ChatGPTManager : MonoBehaviour
             previousResponseId: previousResponseId
         );
 
+        loadingAnimatorObject.SetActive(true);
         Response response = await openAI.ResponsesEndpoint.CreateModelResponseAsync(request);
         response.PrintUsage();
          

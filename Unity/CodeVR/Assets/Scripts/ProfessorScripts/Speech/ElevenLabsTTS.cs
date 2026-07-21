@@ -86,10 +86,10 @@ namespace ElevenLabs.Demo
                         await Task.Delay(50);
 
                     audioSource.clip = clip;
-                    loadingAnimatorObject.SetActive(false);
 
                     if (!isAnimation)
                     {
+                        loadingAnimatorObject.SetActive(false);
                         ConverseAnim.GetComponent<ConversationAnimation>().StartAnimation();
                         isAnimation = true;
                     }
