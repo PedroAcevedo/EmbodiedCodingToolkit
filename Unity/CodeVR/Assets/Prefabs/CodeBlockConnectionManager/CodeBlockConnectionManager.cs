@@ -179,11 +179,6 @@ public class CodeBlockConnectionManager : MonoBehaviour
         if (!quiet)
         {
             var blocklyCode = this._blocklyCodeManager.GenerateBlocklyCode();
-            _chatGPTManager.AskChatGPT(
-                $"The student connected the block '{fromConnector.BlockAttachedTo.name}' " +
-                $"to the block '{toConnector.BlockAttachedTo.name}'. " +
-                $"Respond as a coding tutor and briefly explain whether this " +
-                $"connection makes sense.");
         }
 
 

@@ -46,6 +46,9 @@ public class ChatGPTManager : MonoBehaviour
 
     public TTSAPI TTSapi;
 
+    [Tooltip("'0' for Encouraging, '1' for Explanation, '2' for Direct Solution")]
+    public int BehaviorOption = 0;
+
     [TextArea(5, 20)] public string Role;
     [TextArea(5, 20)] public string Environment;
     [TextArea(5, 20)] public string Behavior;
@@ -64,6 +67,7 @@ public class ChatGPTManager : MonoBehaviour
     private void Start()
     {
         InitializeSelectedAPI();
+        SetBehavior();
         BuildSystemMessage();
     }
 
@@ -202,6 +206,35 @@ public class ChatGPTManager : MonoBehaviour
         }
 
         return str;
+    }
+
+    private void SetBehavior()
+    {
+        if (BehaviorOption == 0)
+        {
+            Behavior = "- Focus on positive reinforcement." +
+            "- Acknowledge what the student did correctly." +
+            "- Encourage continued effort." +
+            "- If there is a mistake, respond gently." +
+            "- Do not immediately give away the full solution." +
+            "- Keep the response breif, this is not a full explanation, just a hint or encouragement.";
+        }
+        else if (BehaviorOption == 1)
+        {
+            Behavior = "- Focus on explaining the concepts." +
+            "- Provide hints and guidance." +
+            "- Encourage the student to think critically." +
+            "- If there is a mistake, explain why and how to correct it." +
+            "- Avoid giving away the full solution." +
+            "- Keep the response concise and to the point";
+        }
+        else if (BehaviorOption == 2)
+        {
+            Behavior = "- Focus on providing direct solutions." +
+            "- If there is a mistake, provide the correct answer and explanation." +
+            "- Encourage the student to learn from the solution."
+            +"- Keep the response concise and to the point.";
+        }
     }
 
     //private void Update()

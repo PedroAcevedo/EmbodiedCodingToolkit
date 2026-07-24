@@ -735,6 +735,41 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6e03e9c987957e4e9d3c6d3d300c0aa, type: 3}
+--- !u!1 &221499912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 221499913}
+  m_Layer: 0
+  m_Name: AI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &221499913
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221499912}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.70361483, y: -3.628692, z: 17.868954}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 673948905}
+  - {fileID: 907172903}
+  - {fileID: 1129810246}
+  - {fileID: 1911241742}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &243227663
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1507,12 +1542,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 673948904}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.70361483, y: -3.628692, z: 17.868954}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 221499913}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &673948908
 MonoBehaviour:
@@ -1536,6 +1571,7 @@ MonoBehaviour:
   AzureAuthPath: Assets/Resources/azure-open-ai.json
   AzureEndpoint: acevedo-llm-avatars.openai.azure.com/openai/
   TTSapi: 0
+  BehaviorOption: 0
   Role: 'You are a confident, friendly Computer Science professor teaching introductory
     programming and basic algorithms. Explain concepts clearly and patiently as if
     guiding a student beside you. The student has no prior programming experience.
@@ -1910,12 +1946,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907172902}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.70361483, y: -3.628692, z: 17.868954}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 221499913}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &907172904
 MonoBehaviour:
@@ -1939,6 +1975,7 @@ MonoBehaviour:
   audioSource: {fileID: 907172905}
   ConverseAnim: {fileID: 1129810244}
   ChatGPTManager: {fileID: 673948904}
+  gazeTrigger: {fileID: 1585501015}
 --- !u!82 &907172905
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10709,12 +10746,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129810244}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.70361483, y: -3.628692, z: 17.868954}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 221499913}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1129810247
 MonoBehaviour:
@@ -11440,6 +11477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1585501014}
   - component: {fileID: 1585501013}
+  - component: {fileID: 1585501015}
   m_Layer: 0
   m_Name: ProfessorCharacter
   m_TagString: Untagged
@@ -11482,8 +11520,29 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1738890951}
+  - {fileID: 1919472151}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 224.628, z: 0}
+--- !u!114 &1585501015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585501012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f443d7a8e4af4e4438cb828d7b2608b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requestInProgress: 0
+  xrCamera: {fileID: 1687258586}
+  professorCollider: {fileID: 1585501013}
+  gazeDuration: 3
+  maxDistance: 10
+  chatGPTManager: {fileID: 673948908}
+  blocklyCodeManager: {fileID: 7256625000210808602}
+  heldCodeBlockTracker: {fileID: 1911241743}
 --- !u!4 &1587434805 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7985744678476896490, guid: f08d3bf9d4fa14edc8bb85904a0a9f69, type: 3}
@@ -11492,6 +11551,11 @@ Transform:
 --- !u!1 &1687258581 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4335488422992099737, guid: ea609286304e63e41bb2f0af4419a6d2, type: 3}
+  m_PrefabInstance: {fileID: 4335488424545008716}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1687258586 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4335488422992099733, guid: ea609286304e63e41bb2f0af4419a6d2, type: 3}
   m_PrefabInstance: {fileID: 4335488424545008716}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1738890951 stripped
@@ -11914,6 +11978,52 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909714587}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1911241741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1911241742}
+  - component: {fileID: 1911241743}
+  m_Layer: 0
+  m_Name: HeldCodeBlockTracker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1911241742
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911241741}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 221499913}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1911241743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911241741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 842aad0ec87157148b4b19ccf2b5ffca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftInteractor: {fileID: 2110831026}
+  rightInteractor: {fileID: 407107325}
 --- !u!4 &1917332514 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7985744678476896490, guid: 0c5477d0d28b640879141a4245277726, type: 3}
@@ -12018,12 +12128,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919472148}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.92511696, z: -0, w: -0.3796823}
-  m_LocalPosition: {x: 1.759, y: 1.756, z: 0.157}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalRotation: {x: -0, y: 0.000003695488, z: -0, w: 1}
+  m_LocalPosition: {x: 0.030709028, y: 1.7260001, z: 0.15536721}
+  m_LocalScale: {x: 0.19999999, y: 0.2, z: 0.19999999}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1585501014}
   m_LocalEulerAnglesHint: {x: 0, y: 224.628, z: 0}
 --- !u!1001 &1971674054
 PrefabInstance:
@@ -12977,6 +13087,34 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 487620336}
+    - target: {fileID: 4335488422870386174, guid: ea609286304e63e41bb2f0af4419a6d2, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4335488422870386174, guid: ea609286304e63e41bb2f0af4419a6d2, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4335488422870386174, guid: ea609286304e63e41bb2f0af4419a6d2, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1911241743}
+    - target: {fileID: 4335488422870386174, guid: ea609286304e63e41bb2f0af4419a6d2, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4335488422870386174, guid: ea609286304e63e41bb2f0af4419a6d2, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetLeftHandBlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 4335488422870386174, guid: ea609286304e63e41bb2f0af4419a6d2, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HeldCodeBlockTracker, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4335488422870386174, guid: ea609286304e63e41bb2f0af4419a6d2, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: CodeBlock, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4335488422992099732, guid: ea609286304e63e41bb2f0af4419a6d2, type: 3}
       propertyPath: m_BackGroundColor.a
       value: 1
@@ -13309,6 +13447,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4191132705583228721, guid: 8e536cb1953be0a49a8f37061887e15f, type: 3}
   m_PrefabInstance: {fileID: 7256625000210808600}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7256625000210808602 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6611448893284595483, guid: 8e536cb1953be0a49a8f37061887e15f, type: 3}
+  m_PrefabInstance: {fileID: 7256625000210808600}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5f0e961e8deb874491a420a7daf95a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -13325,7 +13474,4 @@ SceneRoots:
   - {fileID: 1781892222}
   - {fileID: 2027734999}
   - {fileID: 1585501014}
-  - {fileID: 673948905}
-  - {fileID: 907172903}
-  - {fileID: 1129810246}
-  - {fileID: 1919472151}
+  - {fileID: 221499913}
