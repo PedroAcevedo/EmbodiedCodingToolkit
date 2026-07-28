@@ -216,7 +216,7 @@ public class ChatGPTManager : MonoBehaviour
             "- Acknowledge what the student did correctly." +
             "- Encourage continued effort." +
             "- If there is a mistake, respond gently." +
-            "- Do not immediately give away the full solution." +
+            "- Do not provide a solution." +
             "- Keep the response breif, this is not a full explanation, just a hint or encouragement.";
         }
         else if (BehaviorOption == 1)
@@ -226,7 +226,8 @@ public class ChatGPTManager : MonoBehaviour
             "- Encourage the student to think critically." +
             "- If there is a mistake, explain why and how to correct it." +
             "- Avoid giving away the full solution." +
-            "- Keep the response concise and to the point";
+            "- Use simple language" +
+            "- Keep response brief, this is not a full solution, just a small explanation or hint.";
         }
         else if (BehaviorOption == 2)
         {

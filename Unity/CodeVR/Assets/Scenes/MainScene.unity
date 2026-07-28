@@ -207,7 +207,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 71b4d9640a41f2441abb45904cd1b3ef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1738890953}
   m_SourcePrefab: {fileID: 100100000, guid: 71b4d9640a41f2441abb45904cd1b3ef, type: 3}
 --- !u!1 &70313420
 GameObject:
@@ -940,7 +943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1736794439024984585, guid: 6cf4318ab571a7e449027ebb66d4fa78, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.281
+      value: -1.18
       objectReference: {fileID: 0}
     - target: {fileID: 1736794439024984585, guid: 6cf4318ab571a7e449027ebb66d4fa78, type: 3}
       propertyPath: m_LocalPosition.y
@@ -948,7 +951,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1736794439024984585, guid: 6cf4318ab571a7e449027ebb66d4fa78, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.021
+      value: 1.034
       objectReference: {fileID: 0}
     - target: {fileID: 1736794439024984585, guid: 6cf4318ab571a7e449027ebb66d4fa78, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1571,11 +1574,10 @@ MonoBehaviour:
   AzureAuthPath: Assets/Resources/azure-open-ai.json
   AzureEndpoint: acevedo-llm-avatars.openai.azure.com/openai/
   TTSapi: 0
-  BehaviorOption: 0
+  BehaviorOption: 1
   Role: 'You are a confident, friendly Computer Science professor teaching introductory
     programming and basic algorithms. Explain concepts clearly and patiently as if
     guiding a student beside you. The student has no prior programming experience.
-
 
 
     Focus
@@ -1596,9 +1598,29 @@ MonoBehaviour:
     - Step-by-step reasoning
 
 
-
     Use simple language and concrete
-    examples whenever possible.'
+    examples whenever possible.
+
+
+    You are speaking directly to the student. Your
+    responses will be converted directly to speech using text-to-speech, so always
+    respond as natural spoken dialogue.
+
+
+    Use short, conversational sentences.
+    Do not use bullet points, numbered lists, headings, markdown, code blocks, XML,
+    emojis, stage directions, or speaker labels in your responses.
+
+
+    You may
+    receive Blockly XML, block identifiers, object names, and other internal information
+    about the student''s environment. Use this information to understand what the
+    student is doing, but do not read XML, IDs, object names, or implementation details
+    aloud. Translate them into natural programming terminology.
+
+
+    Output only
+    the words the professor should say aloud.'
   Environment: 'You have just presented part of a programming lecture. The student
     is now interacting with a coding simulation where variables, conditions, loops,
     and algorithm execution are visualized.
@@ -2468,7 +2490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 246836952726565042, guid: 1fe8ff6905c0f9440a6d2ee332cad040, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.355
+      value: -1.279
       objectReference: {fileID: 0}
     - target: {fileID: 246836952726565042, guid: 1fe8ff6905c0f9440a6d2ee332cad040, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11515,7 +11537,7 @@ Transform:
   m_GameObject: {fileID: 1585501012}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.9251184, z: -0, w: -0.37967888}
-  m_LocalPosition: {x: 1.89, y: 0.03, z: 0.246}
+  m_LocalPosition: {x: 1.505, y: 0.03, z: 0.631}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11558,6 +11580,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4335488422992099733, guid: ea609286304e63e41bb2f0af4419a6d2, type: 3}
   m_PrefabInstance: {fileID: 4335488424545008716}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1717623071 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 71b4d9640a41f2441abb45904cd1b3ef, type: 3}
+  m_PrefabInstance: {fileID: 38944053}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1738890951 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 71b4d9640a41f2441abb45904cd1b3ef, type: 3}
@@ -11568,6 +11595,24 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 71b4d9640a41f2441abb45904cd1b3ef, type: 3}
   m_PrefabInstance: {fileID: 38944053}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1738890953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717623071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e0ba63295556c746af6c91fbf8c75f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1738890952}
+  playerHead: {fileID: 1687258586}
+  lookWeight: 1
+  bodyWeight: 0.1
+  headWeight: 0.8
+  clampWeight: 0.5
 --- !u!1001 &1757915969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12232,7 +12277,7 @@ Transform:
   m_GameObject: {fileID: 2017800900}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.664, y: 0.5, z: -0.145}
+  m_LocalPosition: {x: -1.588, y: 0.5, z: -0.145}
   m_LocalScale: {x: 2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13006,75 +13051,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2940751899996411112, guid: b92e1d5eb03914a1f890ffb21fce584d, type: 3}
   m_PrefabInstance: {fileID: 3109694891511555812}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &3426016720240010020
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 147224137019296802, guid: 6cf4318ab571a7e449027ebb66d4fa78, type: 3}
-      propertyPath: _leftController
-      value: 
-      objectReference: {fileID: 2110831026}
-    - target: {fileID: 147224137019296802, guid: 6cf4318ab571a7e449027ebb66d4fa78, type: 3}
-      propertyPath: _rightController
-      value: 
-      objectReference: {fileID: 407107325}
-    - target: {fileID: 1736794439024984585, guid: 6cf4318ab571a7e449027ebb66d4fa78, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1736794439024984585, guid: 6cf4318ab571a7e449027ebb66d4fa78, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.253
-      objectReference: {fileID: 0}
-    - target: {fileID: 1736794439024984585, guid: 6cf4318ab571a7e449027ebb66d4fa78, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1736794439024984585, guid: 6cf4318ab571a7e449027ebb66d4fa78, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 1736794439024984585, guid: 6cf4318ab571a7e449027ebb66d4fa78, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1736794439024984585, guid: 6cf4318ab571a7e449027ebb66d4fa78, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1736794439024984585, guid: 6cf4318ab571a7e449027ebb66d4fa78, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1736794439024984585, guid: 6cf4318ab571a7e449027ebb66d4fa78, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1736794439024984585, guid: 6cf4318ab571a7e449027ebb66d4fa78, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1736794439024984585, guid: 6cf4318ab571a7e449027ebb66d4fa78, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1736794439024984585, guid: 6cf4318ab571a7e449027ebb66d4fa78, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7058405059215943864, guid: 6cf4318ab571a7e449027ebb66d4fa78, type: 3}
-      propertyPath: m_Name
-      value: Trashcan
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6cf4318ab571a7e449027ebb66d4fa78, type: 3}
 --- !u!1001 &4335488424545008716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13467,7 +13443,6 @@ SceneRoots:
   - {fileID: 389504641}
   - {fileID: 964002946}
   - {fileID: 982260020}
-  - {fileID: 3426016720240010020}
   - {fileID: 2138677393}
   - {fileID: 487620337}
   - {fileID: 4335488424545008716}
