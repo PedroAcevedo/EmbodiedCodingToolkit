@@ -16,10 +16,10 @@ namespace Samples.Whisper
 
         [SerializeField] private GameObject OutputTranscript;
         [SerializeField] private GameObject Thoughtbubble;
-        [SerializeField] private Text message;
+        [SerializeField] private TMPro.TextMeshProUGUI message;
         [SerializeField] private GameObject RecordingLight;
         [SerializeField] private GameObject RecordingText;
-        [SerializeField] private Dropdown dropdown;
+        [SerializeField] private TMP_Dropdown dropdown;
 
         private readonly string fileName = "output.wav";
         private readonly int maxDuration = 30;
@@ -27,7 +27,6 @@ namespace Samples.Whisper
         private ChatGPTManager ChatGPTManager;
         private AudioClip clip;
         private bool isRecording = false;
-        private OpenAIClient openAI;
         private int index;
 
         private void Awake()
@@ -44,17 +43,6 @@ namespace Samples.Whisper
 
         private void Start()
         {
-            OpenaiAPI apiKeyComponent = GetComponent<OpenaiAPI>();
-            if (apiKeyComponent == null || string.IsNullOrWhiteSpace(apiKeyComponent.API_key))
-            {
-                Debug.LogError("Missing OpenaiAPI component or API_key for Whisper transcription.");
-            }
-            else
-            {
-                OpenAIAuthentication auth = new OpenAIAuthentication(apiKeyComponent.API_key);
-                openAI = new OpenAIClient(auth);
-            }
-
             ChatGPTManager = GetComponent<ChatGPTManager>();
 
 #if UNITY_WEBGL && !UNITY_EDITOR
@@ -62,7 +50,7 @@ namespace Samples.Whisper
 #else
             foreach (string device in Microphone.devices)
             {
-                dropdown.options.Add(new Dropdown.OptionData(device));
+                dropdown.options.Add(new TMP_Dropdown.OptionData(device));
             }
 
             dropdown.onValueChanged.AddListener(ChangeMicrophone);
@@ -97,7 +85,7 @@ namespace Samples.Whisper
         private void StartRecording()
         {
             RecordingLight.GetComponent<Renderer>().material.color = Color.green;
-            RecordingText.GetComponent<TextMeshPro>().text = "Recording";
+            RecordingText.GetComponent<TextMeshProUGUI>().text = "Recording";
 
             OutputTranscript.GetComponent<OutputTranscript>().userResponseTime.Add(responseTimer);
             Debug.Log("timer ends");
@@ -111,13 +99,13 @@ namespace Samples.Whisper
         {
             message.text = "Transcribing...";
             RecordingLight.GetComponent<Renderer>().material.color = Color.gray;
-            RecordingText.GetComponent<TextMeshPro>().text = "...";
+            RecordingText.GetComponent<TextMeshProUGUI>().text = "...";
 
 #if !UNITY_WEBGL
             Microphone.End(dropdown.options[index].text);
 #endif
 
-            if (openAI == null)
+            if (ChatGPTManager.GetOpenAIInstance() == null)
             {
                 Debug.LogError("OpenAI client was not initialized for transcription.");
                 return;
@@ -134,7 +122,7 @@ namespace Samples.Whisper
                 language: "en",
                 responseFormat: AudioResponseFormat.Text))
             {
-                transcript = await openAI.AudioEndpoint.CreateTranscriptionTextAsync(request);
+                transcript = await ChatGPTManager.GetOpenAIInstance().AudioEndpoint.CreateTranscriptionTextAsync(request);
             }
 
             if (ChatGPTManager != null)

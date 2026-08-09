@@ -8,6 +8,6 @@ public class OpenaiAPI : MonoBehaviour
 
     public void Start()
     {
-        API_key = Environment.GetEnvironmentVariable("OPENAI_KEY");
+        //API_key = Environment.GetEnvironmentVariable("OPENAI_KEY");
     }
 }
