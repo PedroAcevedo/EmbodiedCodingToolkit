@@ -136,6 +136,23 @@ public class ExpandableBlock : MonoBehaviour
         return size;
     }
 
+    public void AddHeightConnector(CodeBlockConnector connector)
+    {
+        if (connector == null)
+            return;
+
+        if (!_connectorsEffectsHeight.Contains(connector))
+            _connectorsEffectsHeight.Add(connector);
+}
+
+    public void RemoveHeightConnector(CodeBlockConnector connector)
+    {
+        if (connector == null)
+            return;
+
+        _connectorsEffectsHeight.Remove(connector);
+    }
+
     public float GetHeight()
     {
         var heightOfChildren = this.GetSizeOfClusterConnectedToConnectors(this._connectorsEffectsHeight).y;
@@ -149,6 +166,8 @@ public class ExpandableBlock : MonoBehaviour
     }
 
     public void SetExtraExpandSize(Vector3 size) => this._extraExpandSize = size;
+
+    
 
     [Serializable]
     public struct ExpandableSetting

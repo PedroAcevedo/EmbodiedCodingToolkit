@@ -70,8 +70,7 @@ MonoBehaviour:
     ExtraStaticScale: {x: 0, y: 0, z: 0}
     ShouldScale: 0
   _heightCalculationMode: 1
-  _connectorsEffectsHeight:
-  - {fileID: 0}
+  _connectorsEffectsHeight: []
   _widthCalculationMode: 0
   _connectorsEffectsWidth: []
   _inputFieldEffectsWidth: {fileID: 0}
@@ -90,7 +89,7 @@ GameObject:
   - component: {fileID: 4087808109078327135}
   - component: {fileID: 7533898015838537485}
   - component: {fileID: 3366736050337757126}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: AddItemButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,10 +194,22 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 7533898015838537485}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -7631834708052860953}
+        m_TargetAssemblyTypeName: DynamicListInput, Assembly-CSharp
+        m_MethodName: AddItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &628626953161793969
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,7 +617,7 @@ GameObject:
   - component: {fileID: 2370939900837366426}
   - component: {fileID: 7764360691269416716}
   - component: {fileID: 6145459475734506556}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -741,7 +752,7 @@ GameObject:
   - component: {fileID: 3239651363340601542}
   - component: {fileID: 2668412412576588500}
   - component: {fileID: 992451227626724516}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: RemoveItemButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -846,10 +857,22 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 2668412412576588500}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -7631834708052860953}
+        m_TargetAssemblyTypeName: DynamicListInput, Assembly-CSharp
+        m_MethodName: RemoveItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3993966159782736110
 GameObject:
   m_ObjectHideFlags: 0
@@ -6151,7 +6174,8 @@ GameObject:
   - component: {fileID: 2615585359233884872}
   - component: {fileID: 2857733266545056716}
   - component: {fileID: 1179794053615699921}
-  m_Layer: 0
+  - component: {fileID: 7273456641718221582}
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6237,11 +6261,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
+  m_IgnoreReversedGraphics: 0
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7273456641718221582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8165552714648480261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 0
+  m_CheckFor2DOcclusion: 0
+  m_CheckFor3DOcclusion: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RaycastTriggerInteraction: 1
 --- !u!1 &8334863768071254514
 GameObject:
   m_ObjectHideFlags: 0
@@ -6530,6 +6573,7 @@ GameObject:
   - component: {fileID: 4075375535570374853}
   - component: {fileID: 1944024492666253705}
   - component: {fileID: 6875445264995315581}
+  - component: {fileID: -7631834708052860953}
   m_Layer: 7
   m_Name: CreateList
   m_TagString: Untagged
@@ -6597,17 +6641,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ae0b866b7244932910ae96ea2ee983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _staticSize: {x: 1.5, y: 0, z: 0}
+  _staticSize: {x: 4, y: 1.5, z: 0}
   _heightCalculationMode: 1
-  _heightExpandableBlocks:
-  - {fileID: 1680670964917819191}
+  _heightExpandableBlocks: []
   _connectorsThatEffectHeight: []
   _widthCalculationMode: 0
   _widthExpandableBlocks:
   - {fileID: 1680670964917819191}
   _widthConnectorsCalculationMode: 0
-  _connectorsThatEffectWidth:
-  - {fileID: 0}
+  _connectorsThatEffectWidth: []
   _marginWhenNoConnectionExist: {x: 1, y: 0, z: 0}
 --- !u!114 &1944024492666253705
 MonoBehaviour:
@@ -6743,6 +6785,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-7631834708052860953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8692339469004890467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4803fc0a73fda64eb44e1e67ca9de58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _codeBlock: {fileID: 464279294438429285}
+  _expandableBlock: {fileID: 1680670964917819191}
+  _inputConnectorPrefab: {fileID: 4092774086514283073, guid: f568b0349bd841c4a96327a4d7721e5a, type: 3}
+  _connectorParent: {fileID: 6185149272343843238}
+  _firstConnectorPosition: {x: 1.52, y: -0.4, z: 0}
+  _connectorSpacing: 1.2
+  _heightPerAdditionalConnector: 1.2
 --- !u!1 &8839724012274685924
 GameObject:
   m_ObjectHideFlags: 0
@@ -6754,7 +6815,7 @@ GameObject:
   - component: {fileID: 2508960396535563442}
   - component: {fileID: 1524471016115668921}
   - component: {fileID: 5186498233247599600}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
