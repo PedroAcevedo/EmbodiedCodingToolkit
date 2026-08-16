@@ -1392,7 +1392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3644922848688325262, guid: d54f52fc2f8cd4a1c849a29fdf8f9930, type: 3}
       propertyPath: _options.Array.data[1].Value
-      value: INSERTAT
+      value: INSERT
       objectReference: {fileID: 0}
     - target: {fileID: 3644922848688325262, guid: d54f52fc2f8cd4a1c849a29fdf8f9930, type: 3}
       propertyPath: _options.Array.data[0].IsDefaultValue
@@ -1432,7 +1432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877291088548763694, guid: d54f52fc2f8cd4a1c849a29fdf8f9930, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.45
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3877291088548763694, guid: d54f52fc2f8cd4a1c849a29fdf8f9930, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1848,7 +1848,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4072927354368697834, guid: f3a57e93e2a864de1967a639ab437c25, type: 3}
       propertyPath: _expandables.Array.data[5].Offset.x
-      value: -0.45
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: -4072927354368697834, guid: f3a57e93e2a864de1967a639ab437c25, type: 3}
       propertyPath: _expandables.Array.data[6].Offset.x
