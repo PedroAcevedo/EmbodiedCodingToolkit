@@ -280,7 +280,7 @@ MonoBehaviour:
     ExtraStaticScale: {x: 2.75, y: 0, z: 0}
     ShouldScale: 1
   - TransformReference: {fileID: 550720165730332369}
-    Offset: {x: 0, y: 0, z: 0}
+    Offset: {x: -0.5, y: 0, z: 0}
     ScaleOffset: {x: -1, y: 1, z: 0}
     ScaleFactor: {x: 1, y: 1, z: 1}
     ExtraStaticScale: {x: 0, y: 0, z: 0}
@@ -15729,7 +15729,7 @@ MonoBehaviour:
   _blockAttachedTo: {fileID: 464279294438429285}
   _incompatibleBlocks: 
   _xmlTag: statement
-  _nameAttributeValue: DO0
+  _nameAttributeValue: DO
   _connectionDistance: 0.25
   _collider: {fileID: 7920239756156593354}
   _distanceReferencePoint: {fileID: 2881729808512594345}
@@ -27197,7 +27197,7 @@ Transform:
   m_GameObject: {fileID: 7187901751875229764}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -38613,6 +38613,8 @@ GameObject:
   - component: {fileID: 4075375535570374853}
   - component: {fileID: 1944024492666253705}
   - component: {fileID: 6875445264995315581}
+  - component: {fileID: 6525756455195835407}
+  - component: {fileID: 2057840131260311265}
   m_Layer: 7
   m_Name: ForLoop
   m_TagString: Untagged
@@ -38666,11 +38668,9 @@ MonoBehaviour:
   _audioSource: {fileID: 6812263694410687249}
   _blocklyTypeString: controls_for
   _category: 2
-  _blocklyFields:
-  - Name: VAR
-    DynamicValue: {fileID: 892044232257776357}
-    StaticValue: 
-  _customXMLElements: []
+  _blocklyFields: []
+  _customXMLElements:
+  - {fileID: 2057840131260311265}
   _ignoreBlocklyCodeGenerationIfSolo: 0
   _excludeInAutomaticBlocklyCodeGeneration: 0
   _usePreviousBlockForXMLContent: 0
@@ -38695,8 +38695,6 @@ MonoBehaviour:
   _heightExpandableBlocks:
   - {fileID: 1680670964917819191}
   - {fileID: 8926329190034666530}
-  - {fileID: 4297369442690438910}
-  - {fileID: 1782787137368514354}
   _connectorsThatEffectHeight:
   - {fileID: 6664971751550474603}
   _widthCalculationMode: 0
@@ -38840,6 +38838,33 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6525756455195835407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8692339469004890467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6152810f5ac904986bcc3b65094a618b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dropdown: {fileID: 892044232257776357}
+  _startValueByVariableName: 
+--- !u!114 &2057840131260311265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8692339469004890467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 317ae9492fe084db39afc1d01147700e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _input: {fileID: 892044232257776357}
 --- !u!1 &8737107690615260707
 GameObject:
   m_ObjectHideFlags: 0
@@ -39305,7 +39330,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3528889117928307685, guid: d54f52fc2f8cd4a1c849a29fdf8f9930, type: 3}
       propertyPath: m_text
-      value: i
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3528889117928307685, guid: d54f52fc2f8cd4a1c849a29fdf8f9930, type: 3}
       propertyPath: m_fontSize
@@ -39317,15 +39342,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3644922848688325262, guid: d54f52fc2f8cd4a1c849a29fdf8f9930, type: 3}
       propertyPath: _options.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3644922848688325262, guid: d54f52fc2f8cd4a1c849a29fdf8f9930, type: 3}
       propertyPath: _options.Array.data[0].Text
-      value: i
+      value: foo
       objectReference: {fileID: 0}
     - target: {fileID: 3644922848688325262, guid: d54f52fc2f8cd4a1c849a29fdf8f9930, type: 3}
       propertyPath: _options.Array.data[0].Value
-      value: I
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3644922848688325262, guid: d54f52fc2f8cd4a1c849a29fdf8f9930, type: 3}
       propertyPath: _options.Array.data[0].IsDefaultValue
@@ -39398,10 +39423,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 368668768940376039, guid: d54f52fc2f8cd4a1c849a29fdf8f9930, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8932414238867904053}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d54f52fc2f8cd4a1c849a29fdf8f9930, type: 3}
 --- !u!4 &809122050933289029 stripped
 Transform:
@@ -39413,28 +39435,9 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3644922848688325262, guid: d54f52fc2f8cd4a1c849a29fdf8f9930, type: 3}
   m_PrefabInstance: {fileID: 4536377736220698731}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4317181618106423180}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 182f1bfc5d0f44f2db67be831cfc41a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &4317181618106423180 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 368668768940376039, guid: d54f52fc2f8cd4a1c849a29fdf8f9930, type: 3}
-  m_PrefabInstance: {fileID: 4536377736220698731}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8932414238867904053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4317181618106423180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6152810f5ac904986bcc3b65094a618b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _dropdown: {fileID: 892044232257776357}
-  _startValueByVariableName: 
