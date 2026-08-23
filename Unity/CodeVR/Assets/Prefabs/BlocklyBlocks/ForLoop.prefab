@@ -38615,6 +38615,7 @@ GameObject:
   - component: {fileID: 6875445264995315581}
   - component: {fileID: 6525756455195835407}
   - component: {fileID: 2057840131260311265}
+  - component: {fileID: 4577920910165262382}
   m_Layer: 7
   m_Name: ForLoop
   m_TagString: Untagged
@@ -38865,6 +38866,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _input: {fileID: 892044232257776357}
+--- !u!114 &4577920910165262382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8692339469004890467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bf543e9db8ef7d4a8c3759ea06ab286, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _varName: i
+  _variableDropdownHandler: {fileID: 6525756455195835407}
 --- !u!1 &8737107690615260707
 GameObject:
   m_ObjectHideFlags: 0
@@ -39346,7 +39361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3644922848688325262, guid: d54f52fc2f8cd4a1c849a29fdf8f9930, type: 3}
       propertyPath: _options.Array.data[0].Text
-      value: foo
+      value: i
       objectReference: {fileID: 0}
     - target: {fileID: 3644922848688325262, guid: d54f52fc2f8cd4a1c849a29fdf8f9930, type: 3}
       propertyPath: _options.Array.data[0].Value
