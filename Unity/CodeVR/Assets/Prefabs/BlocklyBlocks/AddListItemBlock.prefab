@@ -2716,7 +2716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4072927354368697834, guid: f3a57e93e2a864de1967a639ab437c25, type: 3}
       propertyPath: _expandables.Array.data[5].Offset.y
-      value: -0.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4072927354368697834, guid: f3a57e93e2a864de1967a639ab437c25, type: 3}
       propertyPath: _expandables.Array.data[6].Offset.x
@@ -2892,7 +2892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4072927354368697834, guid: f3a57e93e2a864de1967a639ab437c25, type: 3}
       propertyPath: _expandables.Array.data[5].ScaleOffset.y
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -4072927354368697834, guid: f3a57e93e2a864de1967a639ab437c25, type: 3}
       propertyPath: _expandables.Array.data[6].ScaleFactor.x
@@ -3008,7 +3008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 432045458254109831, guid: f3a57e93e2a864de1967a639ab437c25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.62
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 432045458254109831, guid: f3a57e93e2a864de1967a639ab437c25, type: 3}
       propertyPath: m_LocalPosition.y

@@ -1334,6 +1334,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2600880191890634126, guid: d6e03e9c987957e4e9d3c6d3d300c0aa, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2907773648313447108, guid: d6e03e9c987957e4e9d3c6d3d300c0aa, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3433,6 +3437,55 @@ MonoBehaviour:
   Environment: 'You have just presented part of a programming lecture. The student
     is now interacting with a coding simulation where variables, conditions, loops,
     and algorithm execution are visualized.
+
+
+    - LogicCompare (=, <, >, etc)
+
+    -
+    Logic Operation (and, or)
+
+    - If
+
+    - Boolean (true or false block)
+
+    -
+    Negate
+
+    - Else if
+
+    - Else
+
+    - While loop
+
+    - For loop
+
+    - For
+    each loop
+
+    - Arithmetic operations
+
+    - Modulo
+
+    - Number
+
+    - Text
+
+    -
+    Get element from text
+
+    - Length block (for strings and lists)
+
+    - Create
+    empty list
+
+    - Set/insert element in list
+
+    - Create variable (not a block
+    but option in the menu)
+
+    - Set variable
+
+    - Variable
 
 '
   Behavior: 'Your Behavior:
@@ -22417,6 +22470,54 @@ PrefabInstance:
     - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
       propertyPath: _disable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[13].TaskID
+      value: caesar_cipher
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[14].TaskID
+      value: ceasar_cipher
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[13].BlocksContainer
+      value: 
+      objectReference: {fileID: 3642513230351947424, guid: 73cf51b9ed90c09439763cd7fa2edea6, type: 3}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[14].BlocksContainer
+      value: 
+      objectReference: {fileID: 3642513230351947424, guid: 73cf51b9ed90c09439763cd7fa2edea6, type: 3}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[13].Variables.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[14].Variables.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[13].Variables.Array.data[0]
+      value: alphabet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[13].Variables.Array.data[1]
+      value: input
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[13].Variables.Array.data[2]
+      value: shift
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[14].Variables.Array.data[0]
+      value: alphabet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[14].Variables.Array.data[1]
+      value: input
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
