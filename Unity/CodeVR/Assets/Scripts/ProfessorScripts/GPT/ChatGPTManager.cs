@@ -28,6 +28,7 @@ public class ChatGPTManager : MonoBehaviour
     public ConversationAnimation ConversationAnimation;
     public GameObject loadingAnimatorObject;
 
+    [SerializeField] private GameObject Thoughtbubble;
 
     [Header("LLM API")]
     public LLMAPI LLMapi = LLMAPI.OpenAI;
@@ -69,6 +70,11 @@ public class ChatGPTManager : MonoBehaviour
         InitializeSelectedAPI();
         SetBehavior();
         BuildSystemMessage();
+    }
+
+    public OpenAIClient GetOpenAIInstance()
+    {
+        return openAI;
     }
 
     private void InitializeSelectedAPI()
@@ -166,6 +172,7 @@ public class ChatGPTManager : MonoBehaviour
         Debug.Log(responseText);
 
         string processedResponse = ProcessResponseText(responseText);
+        Thoughtbubble.SetActive(false);
 
         if (OutputTranscript != null)
         {

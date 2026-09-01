@@ -1,0 +1,809 @@
+fileFormatVersion: 2
+guid: 04b92fb6ce70b194aad560ff8bc0ec9f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4200
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a62abd18c046144182b7a9d0f9a49a0
+      internalID: 832227647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_1
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 4200
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a50aa315cabbee42b224179752aa0dd
+      internalID: -447018779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_2
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 4200
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 690093eb97416904b9630e529c648ce3
+      internalID: -671978775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_3
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 4200
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c65affbf43b27a045a30b3b774b886b1
+      internalID: 1349308014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_4
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 4200
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 341fc107e3b60af4a83d39f7b7438868
+      internalID: -1610210504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3500
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c4ff0a7e532ebf438615dd67fb84b38
+      internalID: 1661762285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_6
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 3500
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b24223bb0850d54d8ba36f73f09fe12
+      internalID: 3674369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_7
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 3500
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24b3edec34d6e664c84b869e51764f47
+      internalID: -1825405920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_8
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 3500
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7be9fc517caf9a94a8222fff896b50d9
+      internalID: -1245401210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_9
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 3500
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ffa648f20e171b43b6f4a12a0da603c
+      internalID: 877996938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2800
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d4cb4db61270ce42b498cee545a0925
+      internalID: -188979242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_11
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 2800
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ee1177f5de2e2f40a4fd621fb6b342c
+      internalID: -1946492355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_12
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 2800
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86f00d975a893ea4989c0e6cc26d68fe
+      internalID: 1401363500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_13
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 2800
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e9edae7ca029a8498304278fcf93d3a
+      internalID: -1366840008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_14
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 2800
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a5ba3d5f75633e4cad5786f49b02ea2
+      internalID: -68247833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2100
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b48834cac2823c547b31ab376650b3e0
+      internalID: -58006250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_16
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 2100
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3160c7638ad301943b21eff06673936f
+      internalID: 1469858438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_17
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 2100
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f804a7bdbbdd2b4c9b8f3112912cab5
+      internalID: -2098703490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_18
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 2100
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e784005eb289bed478e92729053ad15b
+      internalID: -822369722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_19
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 2100
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e342940b951e59d47a7738843d64feb4
+      internalID: -845727081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1400
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ec6e65af513b984dbf6b23c7ab2e666
+      internalID: 881082988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_21
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1400
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ae9b521bcb8606429f0fc2c95674642
+      internalID: -1928744413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_22
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1400
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5546bc4a1675c1b43847cd317a839c27
+      internalID: -592822544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_23
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1400
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce0bfe2b3ae0f144ca7c5afd6927005f
+      internalID: 799688421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_24
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 1400
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af3065dc7b26a6c4286964213b061644
+      internalID: 935242836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 700
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecce93068b95ad24da29eeefe7fe8a56
+      internalID: -870355487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_26
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 700
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3b51676ad9acf04ebdda1b4e6ddf844
+      internalID: 1101220004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_27
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 700
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21d3938866411004ca9258b07f7deab4
+      internalID: 1031829255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_28
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 700
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f15f28ae4f65c934098c36719610c91c
+      internalID: 1338863430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_29
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 700
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08340659ac04ffc41a74ab4f77d86b4f
+      internalID: 571648240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thoughtbubble-sprite_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b89ad5b15d8ca1744a360e919550b5a5
+      internalID: 1868126951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      thoughtbubble-sprite_0: 832227647
+      thoughtbubble-sprite_1: -447018779
+      thoughtbubble-sprite_10: -188979242
+      thoughtbubble-sprite_11: -1946492355
+      thoughtbubble-sprite_12: 1401363500
+      thoughtbubble-sprite_13: -1366840008
+      thoughtbubble-sprite_14: -68247833
+      thoughtbubble-sprite_15: -58006250
+      thoughtbubble-sprite_16: 1469858438
+      thoughtbubble-sprite_17: -2098703490
+      thoughtbubble-sprite_18: -822369722
+      thoughtbubble-sprite_19: -845727081
+      thoughtbubble-sprite_2: -671978775
+      thoughtbubble-sprite_20: 881082988
+      thoughtbubble-sprite_21: -1928744413
+      thoughtbubble-sprite_22: -592822544
+      thoughtbubble-sprite_23: 799688421
+      thoughtbubble-sprite_24: 935242836
+      thoughtbubble-sprite_25: -870355487
+      thoughtbubble-sprite_26: 1101220004
+      thoughtbubble-sprite_27: 1031829255
+      thoughtbubble-sprite_28: 1338863430
+      thoughtbubble-sprite_29: 571648240
+      thoughtbubble-sprite_3: 1349308014
+      thoughtbubble-sprite_30: 1868126951
+      thoughtbubble-sprite_4: -1610210504
+      thoughtbubble-sprite_5: 1661762285
+      thoughtbubble-sprite_6: 3674369
+      thoughtbubble-sprite_7: -1825405920
+      thoughtbubble-sprite_8: -1245401210
+      thoughtbubble-sprite_9: 877996938
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
