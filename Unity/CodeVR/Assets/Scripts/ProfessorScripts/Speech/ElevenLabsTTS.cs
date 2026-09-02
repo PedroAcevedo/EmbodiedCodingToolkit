@@ -27,7 +27,7 @@ namespace ElevenLabs.Demo
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private GameObject ConverseAnim;
         [SerializeField] private GameObject ChatGPTManager;
-        [SerializeField] private ProfessorGazeTrigger gazeTrigger;
+        [SerializeField] private PromptGenerator promptGenerator;
 
         //private readonly Queue<AudioClip> streamClipQueue = new ();
         private CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
@@ -102,7 +102,7 @@ namespace ElevenLabs.Demo
                     await Task.Delay(50);
 
                 //end clip, so end animation
-                gazeTrigger.requestInProgress = false;
+                promptGenerator.RequestInProgress = false;
                 ConverseAnim.GetComponent<ConversationAnimation>().EndAnimation();
                 isAnimation = false;
 

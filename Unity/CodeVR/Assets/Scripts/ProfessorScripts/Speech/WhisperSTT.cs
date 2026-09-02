@@ -20,6 +20,7 @@ namespace Samples.Whisper
         [SerializeField] private GameObject RecordingLight;
         [SerializeField] private GameObject RecordingText;
         [SerializeField] private TMP_Dropdown dropdown;
+        [SerializeField] private PromptGenerator promptGenerator;
 
         private readonly string fileName = "output.wav";
         private readonly int maxDuration = 30;
@@ -125,9 +126,11 @@ namespace Samples.Whisper
                 transcript = await ChatGPTManager.GetOpenAIInstance().AudioEndpoint.CreateTranscriptionTextAsync(request);
             }
 
-            if (ChatGPTManager != null)
+            if (promptGenerator != null)
             {
-                ChatGPTManager.AskChatGPT(transcript);
+                StartCoroutine(
+                    promptGenerator.BuildAndSendPrompt(transcript)
+                );
             }
 
             string replaced = transcript.Replace(',', '.');

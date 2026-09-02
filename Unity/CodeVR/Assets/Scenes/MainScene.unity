@@ -4448,6 +4448,7 @@ GameObject:
   - component: {fileID: 673948909}
   - component: {fileID: 673948908}
   - component: {fileID: 673948910}
+  - component: {fileID: 673948911}
   m_Layer: 0
   m_Name: ChatGPTManager
   m_TagString: Untagged
@@ -4598,6 +4599,23 @@ MonoBehaviour:
   RecordingLight: {fileID: 1619743710}
   RecordingText: {fileID: 90484287}
   dropdown: {fileID: 1651161168}
+  promptGenerator: {fileID: 673948911}
+--- !u!114 &673948911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673948904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d841ad035c1328742a46b68c2b5ead1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequestInProgress: 0
+  chatGPTManager: {fileID: 673948908}
+  blocklyCodeManager: {fileID: 7256625000210808602}
+  heldCodeBlockTracker: {fileID: 1911241743}
 --- !u!4 &682609656 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7985744678476896490, guid: 0c5477d0d28b640879141a4245277726, type: 3}
@@ -5107,7 +5125,7 @@ MonoBehaviour:
   audioSource: {fileID: 907172905}
   ConverseAnim: {fileID: 1129810244}
   ChatGPTManager: {fileID: 673948904}
-  gazeTrigger: {fileID: 1585501015}
+  promptGenerator: {fileID: 673948911}
 --- !u!82 &907172905
 AudioSource:
   m_ObjectHideFlags: 0
@@ -16513,7 +16531,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1585501014}
   - component: {fileID: 1585501013}
-  - component: {fileID: 1585501015}
   m_Layer: 0
   m_Name: ProfessorCharacter
   m_TagString: Untagged
@@ -16560,26 +16577,6 @@ Transform:
   - {fileID: 876144969}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 224.628, z: 0}
---- !u!114 &1585501015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1585501012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f443d7a8e4af4e4438cb828d7b2608b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  requestInProgress: 0
-  xrCamera: {fileID: 1687258586}
-  professorCollider: {fileID: 1585501013}
-  gazeDuration: 3
-  maxDistance: 10
-  chatGPTManager: {fileID: 673948908}
-  blocklyCodeManager: {fileID: 7256625000210808602}
-  heldCodeBlockTracker: {fileID: 1911241743}
 --- !u!4 &1587434805 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7985744678476896490, guid: f08d3bf9d4fa14edc8bb85904a0a9f69, type: 3}
