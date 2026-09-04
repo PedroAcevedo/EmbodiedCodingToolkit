@@ -26,8 +26,6 @@ public class ChatGPTManager : MonoBehaviour
     public GameObject TextToSpeech;
     public GameObject OutputTranscript;
     public ConversationAnimation ConversationAnimation;
-    public GameObject loadingAnimatorObject;
-
     [SerializeField] private GameObject Thoughtbubble;
 
     [Header("LLM API")]
@@ -151,7 +149,7 @@ public class ChatGPTManager : MonoBehaviour
             previousResponseId: previousResponseId
         );
 
-        loadingAnimatorObject.SetActive(true);
+        Thoughtbubble.SetActive(true);
         Response response = await openAI.ResponsesEndpoint.CreateModelResponseAsync(request);
         response.PrintUsage();
          
@@ -172,7 +170,7 @@ public class ChatGPTManager : MonoBehaviour
         Debug.Log(responseText);
 
         string processedResponse = ProcessResponseText(responseText);
-        Thoughtbubble.SetActive(false);
+        
 
         if (OutputTranscript != null)
         {

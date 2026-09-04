@@ -18,7 +18,7 @@ namespace ElevenLabs.Demo
     public class ElevenLabsTTS : MonoBehaviour
     {
         public GameObject character;
-        public GameObject loadingAnimatorObject;
+        public GameObject Thoughtbubble;
         public GameObject nextButton;
         //public GazeTimerTrigger GazeTimerTrigger;
 
@@ -90,7 +90,7 @@ namespace ElevenLabs.Demo
 
                     if (!isAnimation)
                     {
-                        loadingAnimatorObject.SetActive(false);
+                        Thoughtbubble.SetActive(false);
                         ConverseAnim.GetComponent<ConversationAnimation>().StartAnimation();
                         isAnimation = true;
                     }
