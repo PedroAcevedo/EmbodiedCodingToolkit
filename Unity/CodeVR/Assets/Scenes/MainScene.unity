@@ -4484,9 +4484,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextToSpeech: {fileID: 907172902}
-  OutputTranscript: {fileID: 0}
+  OutputTranscript: {fileID: 1053564032}
   ConversationAnimation: {fileID: 1129810247}
-  loadingAnimatorObject: {fileID: 1919472148}
   Thoughtbubble: {fileID: 876144970}
   LLMapi: 0
   OpenAIModel: gpt-4o
@@ -4591,7 +4590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90d3c9a2753b7ef4aa2ffb2a45115f91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recordAction: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  recordAction: {fileID: 2191475302919223237, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   responseTimer: 0
   OutputTranscript: {fileID: 1053564032}
   Thoughtbubble: {fileID: 876144970}
@@ -5116,7 +5115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 1585501012}
-  loadingAnimatorObject: {fileID: 1919472148}
+  Thoughtbubble: {fileID: 876144970}
   nextButton: {fileID: 0}
   configuration: {fileID: 11400000, guid: e5e2f7691bceeee4793621f575e6beb3, type: 2}
   voice:
