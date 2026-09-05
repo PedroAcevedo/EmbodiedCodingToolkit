@@ -45,10 +45,13 @@ public class TaskScreen : MonoBehaviour
             !taskStatus.isCompleted && this._taskManager.CurrentState == TaskManager.State.Ready
         );
         
-        this._testStatus.text = "Tests failed when:";
+        if (this._testStatus != null)
+            this._testStatus.text = "Tests failed when:";
+            
         this._inputs.text = taskStatus.failedTest?.inputs ?? "";
         this._expectedOutput.text = taskStatus.failedTest.output;
-        this._currentOutput.text = taskStatus.currentOutput;
+        if (this._currentOutput != null)
+            this._currentOutput.text = taskStatus.currentOutput;
     }
 
     private void CheckForTaskComplated(TaskStatusResponse taskStatus)
