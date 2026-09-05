@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class TaskScreen : MonoBehaviour
 {
-    [SerializeField] private GameObject _taskStatusContainer;
+    [SerializeField] private GameObject _taskInfoContainer;
+    [SerializeField] private GameObject _taskPanel;
+    [SerializeField] private GameObject _testsPanel;
     [SerializeField] private GameObject _taskCompletedContainer;
     [SerializeField] private GameObject _taskLoadingContainer;
+
+    [Header("Header")]
+    [SerializeField] private ButtonColorChange _taskTab;
+    [SerializeField] private ButtonColorChange _testsTab;
     
+    [Header("Task Info")]
     [SerializeField] private TMPro.TMP_Text _title;
     [SerializeField] private TMPro.TMP_Text _description;
     [SerializeField] private TMPro.TMP_Text _testStatus;
     [SerializeField] private TMPro.TMP_Text _inputs;
     [SerializeField] private TMPro.TMP_Text _expectedOutput;
     [SerializeField] private TMPro.TMP_Text _currentOutput;
-
     [SerializeField] private AudioSource _audioSource;
 
     private TaskManager _taskManager;
@@ -24,55 +30,69 @@ public class TaskScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this._taskManager = FindObjectOfType<TaskManager>();
-        this._taskManager.OnTaskStatusChange += this.OnTaskStatusChange;
+        _taskManager = FindObjectOfType<TaskManager>();
+        _taskManager.OnTaskStatusChange += OnTaskStatusChange;
+        ShowTask();
     }
 
     private void OnTaskStatusChange(TaskStatusResponse taskStatus)
     {
-        this.CheckForTaskComplated(taskStatus);
+        CheckForTaskComplated(taskStatus);
         
-        this._title.text = taskStatus.task.title;
-        this._description.text = taskStatus.task.description;
+        _title.text = taskStatus.task.title;
+        _description.text = taskStatus.task.description;
 
-        this._taskCompletedContainer.SetActive(
-            taskStatus.isCompleted && this._taskManager.CurrentState == TaskManager.State.Ready
+        _taskCompletedContainer.SetActive(
+            taskStatus.isCompleted && _taskManager.CurrentState == TaskManager.State.Ready
         );
-        this._taskLoadingContainer.SetActive(
-            this._taskManager.CurrentState == TaskManager.State.Loading
+        _taskLoadingContainer.SetActive(
+            _taskManager.CurrentState == TaskManager.State.Loading
         );
-        this._taskStatusContainer.SetActive(
-            !taskStatus.isCompleted && this._taskManager.CurrentState == TaskManager.State.Ready
-        );
+        _taskInfoContainer.SetActive(
+            !taskStatus.isCompleted && _taskManager.CurrentState == TaskManager.State.Ready
+        );  
         
-        if (this._testStatus != null)
-            this._testStatus.text = "Tests failed when:";
+        if (_testStatus != null)
+            _testStatus.text = "Tests failed when:";
             
-        this._inputs.text = taskStatus.failedTest?.inputs ?? "";
-        this._expectedOutput.text = taskStatus.failedTest.output;
-        if (this._currentOutput != null)
-            this._currentOutput.text = taskStatus.currentOutput;
+        _inputs.text = taskStatus.failedTest?.inputs ?? "";
+        _expectedOutput.text = taskStatus.failedTest.output;
+        if (_currentOutput != null)
+            _currentOutput.text = taskStatus.currentOutput;
     }
 
     private void CheckForTaskComplated(TaskStatusResponse taskStatus)
     {
-        if (!this._taskCompletedHasHappened && taskStatus.isCompleted)
+        if (!_taskCompletedHasHappened && taskStatus.isCompleted)
         {
-            this._taskCompletedHasHappened = true;
-            this.OnTaskCompleted();
+            _taskCompletedHasHappened = true;
+            OnTaskCompleted();
         }
         if (!taskStatus.isCompleted)
-            this._taskCompletedHasHappened = false;
+            _taskCompletedHasHappened = false;
     }
 
     private void OnTaskCompleted()
     {
-        this._audioSource.Play();
+        _audioSource.Play();
+        ShowTask();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ShowTask()
     {
-        
+        _taskTab.SetActiveState(true);
+        _testsTab.SetActiveState(false);
+
+        _taskPanel.SetActive(true);
+        _testsPanel.SetActive(false);
+    }
+
+    public void ShowTests()
+    {
+        _taskTab.SetActiveState(false);
+        _testsTab.SetActiveState(true);
+
+        _taskPanel.SetActive(false);
+        _testsPanel.SetActive(true);
     }
 }
