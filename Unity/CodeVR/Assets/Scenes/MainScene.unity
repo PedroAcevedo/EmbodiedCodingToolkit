@@ -2466,7 +2466,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 165, y: 9}
+  m_SizeDelta: {x: 160, y: 9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &344473135
 MonoBehaviour:
@@ -4782,7 +4782,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 0
+    m_Top: 20
     m_Bottom: 0
   m_ChildAlignment: 4
   m_Spacing: 0
@@ -17055,7 +17055,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 165, y: 9}
+  m_SizeDelta: {x: 160, y: 9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1732066356
 MonoBehaviour:
@@ -17389,7 +17389,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 160, y: 77.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1785702823
 MonoBehaviour:
@@ -17410,7 +17410,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -17500,7 +17500,7 @@ MonoBehaviour:
   icon: {fileID: 1904626399}
   label: {fileID: 408256991}
   underline: {fileID: 1732066354}
-  activeColor: {r: 1, g: 0.7323802, b: 0.2971698, a: 0}
+  activeColor: {r: 1, g: 0.7323802, b: 0.2971698, a: 1}
   inactiveColor: {r: 0.3254902, g: 0.3254902, b: 0.3254902, a: 1}
 --- !u!114 &1785702827
 MonoBehaviour:
@@ -17581,7 +17581,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 0
+    m_Top: 20
     m_Bottom: 0
   m_ChildAlignment: 4
   m_Spacing: 0
@@ -19130,7 +19130,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 160, y: 77.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2071122775
 MonoBehaviour:
@@ -19147,7 +19147,7 @@ MonoBehaviour:
   icon: {fileID: 782524505}
   label: {fileID: 1330279212}
   underline: {fileID: 344473133}
-  activeColor: {r: 1, g: 0.7323802, b: 0.2971698, a: 0}
+  activeColor: {r: 1, g: 0.7323802, b: 0.2971698, a: 1}
   inactiveColor: {r: 0.3254902, g: 0.3254902, b: 0.3254902, a: 1}
 --- !u!114 &2071122776
 MonoBehaviour:
@@ -19194,7 +19194,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -23327,6 +23327,7 @@ MonoBehaviour:
   _inputs: {fileID: 4207274607279733632}
   _expectedOutput: {fileID: 2341466915537317959}
   _currentOutput: {fileID: 0}
+  _example: {fileID: 8855037308056701676}
   _audioSource: {fileID: 0}
 --- !u!1001 &3109694891511555812
 PrefabInstance:
@@ -32668,6 +32669,7 @@ MonoBehaviour:
   _inputs: {fileID: 7381259933147172358}
   _expectedOutput: {fileID: 2308052665506253744}
   _currentOutput: {fileID: 7239909975290067789}
+  _example: {fileID: 0}
   _audioSource: {fileID: 474502436739400851}
 --- !u!224 &7816785535521934322
 RectTransform:
@@ -32751,7 +32753,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 0
+    m_Top: 25
     m_Bottom: 0
   m_ChildAlignment: 3
   m_Spacing: 5
@@ -32999,7 +33001,7 @@ GameObject:
   - component: {fileID: 8855037308056701676}
   - component: {fileID: 5133729710832770805}
   m_Layer: 5
-  m_Name: OutputText
+  m_Name: ExampleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33903,7 +33905,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 369.3, y: 0}
-  m_SizeDelta: {x: 738.6, y: 43.76}
+  m_SizeDelta: {x: 738.6, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &9168333346411440387
 MonoBehaviour:

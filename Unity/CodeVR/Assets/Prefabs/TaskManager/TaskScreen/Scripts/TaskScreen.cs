@@ -21,6 +21,7 @@ public class TaskScreen : MonoBehaviour
     [SerializeField] private TMPro.TMP_Text _inputs;
     [SerializeField] private TMPro.TMP_Text _expectedOutput;
     [SerializeField] private TMPro.TMP_Text _currentOutput;
+    [SerializeField] private TMPro.TMP_Text _example;
     [SerializeField] private AudioSource _audioSource;
 
     private TaskManager _taskManager;
@@ -57,8 +58,11 @@ public class TaskScreen : MonoBehaviour
             
         _inputs.text = taskStatus.failedTest?.inputs ?? "";
         _expectedOutput.text = taskStatus.failedTest.output;
+
         if (_currentOutput != null)
             _currentOutput.text = taskStatus.currentOutput;
+        
+        _example.text = TaskExamples.GetExample(taskStatus.task.id);
     }
 
     private void CheckForTaskComplated(TaskStatusResponse taskStatus)
