@@ -1,4 +1,5 @@
 import Task from "../Types/Task";
+import { TestCaseResult } from "./testBlocklyCode";
 
 const baseAdress = `http://${process.env.REACT_APP_ADRESS}:8999`;
 
@@ -11,7 +12,8 @@ export default async function getCurrentTaskStatus() {
 export async function updateCurrentTaskStatus(
   isCompleted: boolean,
   failedTest: FailedTest | null,
-  currentOutput: string
+  currentOutput: string,
+  testResults: TestCaseResult[],
 ) {
   const data = new URLSearchParams();
   data.append(
@@ -20,7 +22,8 @@ export async function updateCurrentTaskStatus(
       isCompleted: isCompleted,
       failedTest: failedTest,
       currentOutput: currentOutput,
-    })
+      testResults: testResults,
+    }),
   );
 
   await fetch(`${baseAdress}/api/mark-current-task-completed`, {

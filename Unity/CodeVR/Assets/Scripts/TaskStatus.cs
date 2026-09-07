@@ -10,6 +10,8 @@ public class TaskStatusResponse
     public bool isLastTask;
     public FailedTest failedTest;
     public string currentOutput;
+
+    public List<TestCaseResultResponse> testResults;
 }
 
 [Serializable]
@@ -35,4 +37,13 @@ public class TaskStatusTest
 {
     public List<string> inputs;
     public string output;
+}
+
+[Serializable]
+public class TestCaseResultResponse
+{
+    public string inputs;
+    public string expectedOutput;
+    public string currentOutput;
+    public bool passed;
 }
