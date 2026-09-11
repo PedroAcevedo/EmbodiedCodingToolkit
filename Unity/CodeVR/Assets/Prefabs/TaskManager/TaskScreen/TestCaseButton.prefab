@@ -74,8 +74,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4285504860
-  m_fontColor: {r: 0.36078432, g: 0.6156863, b: 0.43529415, a: 1}
+    rgba: 4283650899
+  m_fontColor: {r: 0.3254902, g: 0.3254902, b: 0.3254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3495016, g: 0.6226415, b: 0.42829192, a: 1}
+  m_Color: {r: 0.28627452, g: 0.85882354, b: 0.56078434, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -333,7 +333,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2529233615699376121}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4943104081570954542}
+        m_TargetAssemblyTypeName: TestCaseButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4431341322718835229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,8 +387,6 @@ MonoBehaviour:
   _testName: {fileID: 5000544744573585849}
   _passedIcon: {fileID: 3612518059658451146}
   _failedIcon: {fileID: 8583030270242126927}
-  _passedColor: {r: 0.34901962, g: 0.62352943, b: 0.42745098, a: 1}
-  _failedColor: {r: 0.65882355, g: 0.34117648, b: 0.2901961, a: 1}
 --- !u!1 &8583030270242126927
 GameObject:
   m_ObjectHideFlags: 0
