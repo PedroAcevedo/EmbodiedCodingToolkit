@@ -1,12 +1,13 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TestCaseButton : MonoBehaviour
 {
     [SerializeField] private TMP_Text _testName;
     [SerializeField] private GameObject _passedIcon;
     [SerializeField] private GameObject _failedIcon;
-
+    [SerializeField] private Image _background;
     private TestCaseResultResponse _testResult;
     private TestCasesPanel _testCasesPanel;
     private int _testIndex;
@@ -45,4 +46,10 @@ public class TestCaseButton : MonoBehaviour
             );
         }
     }
+
+    public void SetColor(Color color)
+    {
+        _background.color = color;
+    }
+   
 }

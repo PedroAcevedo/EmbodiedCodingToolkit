@@ -1,9 +1,12 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using TMPro;
 
 public class TestCasesPanel : MonoBehaviour
 {
+    [SerializeField] TaskScreenColors _colors;
     [SerializeField] private Transform _testCaseContainer;
     [SerializeField] private RectTransform _testInfoContainer;
     [SerializeField] private TestCaseButton _testCaseButtonPrefab;
@@ -14,12 +17,8 @@ public class TestCasesPanel : MonoBehaviour
     [SerializeField] private TMP_Text _currentOutput;
     [SerializeField] private TMP_Text _currentOutputLabel;
     [SerializeField] private Image _currentOutputBackground;
-    [SerializeField] private Color _textColorPassed;
-    [SerializeField] private Color _textColorFailed;
-    [SerializeField] private Color _backgroundColorPassed;
-    [SerializeField] private Color _backgroundColorFailed;
-
     private TaskManager _taskManager;
+    private List<TestCaseButton> _testCaseButtons = new List<TestCaseButton>();
     private string _currentTaskID = "";
     private string _lastTestResults = "";
     private int passedTestCount = 0;
@@ -65,6 +64,8 @@ public class TestCasesPanel : MonoBehaviour
                     taskStatus.testResults[_selectedTestIndex],
                     _selectedTestIndex + 1
                 );
+                
+                UpdateButtonSelection();
             }
         }
     }
@@ -96,15 +97,16 @@ public class TestCasesPanel : MonoBehaviour
             {
                 passedTestCount++;
             }
+            _testCaseButtons.Add(button);
         }
 
-        _testCasesTitle.text =
-            $"Test Cases ({passedTestCount}/{taskStatus.testResults.Count})";
+        _testCasesTitle.text = $"Test Cases ({passedTestCount}/{taskStatus.testResults.Count})";
     }
 
     public void SelectTest(TestCaseResultResponse testResult, int testIndex)
     {
         _selectedTestIndex = testIndex;
+        UpdateButtonSelection();
 
         UpdateTestInfo(
             testResult,
@@ -112,9 +114,7 @@ public class TestCasesPanel : MonoBehaviour
         );
     }
 
-    public void UpdateTestInfo(
-        TestCaseResultResponse testResult,
-        int testNumber)
+    public void UpdateTestInfo(TestCaseResultResponse testResult, int testNumber)
     {
         _testCaseTitle.text = $"Test Case {testNumber}";
         _input.text = testResult.inputs;
@@ -126,15 +126,15 @@ public class TestCasesPanel : MonoBehaviour
 
         if (testResult.passed)
         {
-            _currentOutput.color = _textColorPassed;
-            _currentOutputLabel.color = _textColorPassed;
-            _currentOutputBackground.color = _backgroundColorPassed;
+            _currentOutput.color = _colors.TextColorPassed;
+            _currentOutputLabel.color = _colors.TextColorPassed;
+            _currentOutputBackground.color = _colors.BackgroundColorPassed;
         }
         else
         {
-            _currentOutput.color = _textColorFailed;
-            _currentOutputLabel.color = _textColorFailed;
-            _currentOutputBackground.color = _backgroundColorFailed;
+            _currentOutput.color = _colors.TextColorFailed;
+            _currentOutputLabel.color = _colors.TextColorFailed;
+            _currentOutputBackground.color = _colors.BackgroundColorFailed;
         }
 
         Canvas.ForceUpdateCanvases();
@@ -154,5 +154,16 @@ public class TestCasesPanel : MonoBehaviour
         }
 
         return result;
+    }
+
+    private void UpdateButtonSelection()
+    {
+        for (int i = 0; i < _testCaseButtons.Count; i++)
+        {
+            if (i == _selectedTestIndex)
+                _testCaseButtons[i].SetColor(_colors.ActiveButtonColor);
+            else
+                _testCaseButtons[i].SetColor(_colors.InactiveButtonColor);
+        }
     }
 }

@@ -387,6 +387,7 @@ MonoBehaviour:
   _testName: {fileID: 5000544744573585849}
   _passedIcon: {fileID: 3612518059658451146}
   _failedIcon: {fileID: 8583030270242126927}
+  _background: {fileID: 2529233615699376121}
 --- !u!1 &8583030270242126927
 GameObject:
   m_ObjectHideFlags: 0
