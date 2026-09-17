@@ -119,7 +119,7 @@ namespace Samples.Whisper
             using (AudioTranscriptionRequest request = new AudioTranscriptionRequest(
                 audioStream,
                 "audio.wav",
-                model: "whisper-1",
+                model: "whisper",
                 language: "en",
                 responseFormat: AudioResponseFormat.Text))
             {

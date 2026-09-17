@@ -41,7 +41,7 @@ public class ChatGPTManager : MonoBehaviour
     public string AzureAuthPath;
 
     [Tooltip("Azure OpenAI endpoint used when LLMapi is set to AzureOpenAI.")]
-    public string AzureEndpoint = "acevedo-llm-avatars.openai.azure.com/openai/";
+    public string AzureEndpoint = "acevedo-llm-conversational-avatars";
 
     public TTSAPI TTSapi;
 
@@ -92,7 +92,11 @@ public class ChatGPTManager : MonoBehaviour
         else if (LLMapi == LLMAPI.AzureOpenAI)
         {
             OpenAIAuthentication auth = new OpenAIAuthentication(System.Environment.GetEnvironmentVariable("AZURE_KEY"));
-            OpenAISettings settings = new OpenAISettings(AzureEndpoint);
+            var settings = new OpenAISettings(
+                resourceName: AzureEndpoint,
+                deploymentId: "whisper",
+                apiVersion: "2025-03-01-preview"
+                );
             openAI = new OpenAIClient(auth, settings);
         }
         else
