@@ -14,7 +14,7 @@ namespace Samples.Whisper
         public InputActionReference recordAction;
         public float responseTimer = 0;
 
-        [SerializeField] private GameObject OutputTranscript;
+        [SerializeField] private TranscriptManager OutputTranscript;
         [SerializeField] private GameObject Thoughtbubble;
         [SerializeField] private TMPro.TextMeshProUGUI message;
         [SerializeField] private GameObject RecordingLight;
@@ -87,8 +87,6 @@ namespace Samples.Whisper
         {
             RecordingLight.GetComponent<Renderer>().material.color = Color.green;
             RecordingText.GetComponent<TextMeshProUGUI>().text = "Recording";
-
-            OutputTranscript.GetComponent<OutputTranscript>().userResponseTime.Add(responseTimer);
             Debug.Log("timer ends");
 
 #if !UNITY_WEBGL
@@ -134,7 +132,6 @@ namespace Samples.Whisper
             }
 
             string replaced = transcript.Replace(',', '.');
-            OutputTranscript.GetComponent<OutputTranscript>().userResponse.Add(replaced);
 
             Thoughtbubble.SetActive(true);
             message.text = transcript;

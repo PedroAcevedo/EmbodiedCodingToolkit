@@ -14,6 +14,7 @@ export async function updateCurrentTaskStatus(
   failedTest: FailedTest | null,
   currentOutput: string,
   testResults: TestCaseResult[],
+  currentCode: string,
 ) {
   const data = new URLSearchParams();
   data.append(
@@ -23,6 +24,7 @@ export async function updateCurrentTaskStatus(
       failedTest: failedTest,
       currentOutput: currentOutput,
       testResults: testResults,
+      currentCode: currentCode,
     }),
   );
 

@@ -136,7 +136,6 @@ public class ProfessorGazeTrigger : MonoBehaviour
             $"Currently held blocks:\n{heldBlocks}\n\n";
 
         Debug.Log(prompt);
-        chatGPTManager.AskChatGPT(prompt);
     }
 
     private string BuildTaskContext(TaskStatusResponse response)

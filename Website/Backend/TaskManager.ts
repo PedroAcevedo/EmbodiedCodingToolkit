@@ -6,6 +6,7 @@ export default class TaskManager {
   private currentOutput: string = "TEST";
   private failedTest: FailedTest | null = null;
   private testResults: TestCaseResult[] = [];
+  private currentCode: string = "";
 
   public get currentActiveTask() {
     return allTasks[this.currentTaskIndex];
@@ -19,6 +20,7 @@ export default class TaskManager {
       currentOutput: this.currentOutput,
       failedTest: this.failedTest,
       testResults: this.testResults,
+      currentCode: this.currentCode,
     };
   }
 
@@ -37,11 +39,13 @@ export default class TaskManager {
     failedTest: FailedTest | null,
     currentOutput: string,
     testResults: TestCaseResult[],
+    currentCode: string,
   ) {
     this.currentTaskCompleted = isCompleted;
     this.failedTest = failedTest;
     this.currentOutput = currentOutput;
     this.testResults = testResults;
+    this.currentCode = currentCode;
   }
 }
 
@@ -52,6 +56,7 @@ interface TaskStatus {
   failedTest: FailedTest | null;
   currentOutput: string;
   testResults: TestCaseResult[];
+  currentCode: string;
 }
 
 interface FailedTest {

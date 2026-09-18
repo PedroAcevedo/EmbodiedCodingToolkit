@@ -49,6 +49,7 @@ app.post("/api/mark-current-task-completed", (req, res) => {
     data.failedTest,
     data.currentOutput,
     data.testResults,
+    data.currentCode,
   );
   res.send(true);
 });

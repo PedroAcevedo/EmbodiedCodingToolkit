@@ -40,6 +40,7 @@ export const TaskPresenter: FC<TaskPresenterProps> = (props) => {
             },
         output,
         testResults,
+        props.code,
       );
 
       setTaskState({

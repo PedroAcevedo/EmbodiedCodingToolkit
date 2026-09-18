@@ -10,8 +10,8 @@ public class TaskStatusResponse
     public bool isLastTask;
     public FailedTest failedTest;
     public string currentOutput;
-
     public List<TestCaseResultResponse> testResults;
+    public string currentCode;
 }
 
 [Serializable]

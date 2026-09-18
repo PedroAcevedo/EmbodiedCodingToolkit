@@ -1,14 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PromptGenerator : MonoBehaviour
 {
     public bool RequestInProgress = false;
 
-     [Header("AI Context")]
+    [SerializeField] private TranscriptManager _transcriptManager;
+
+    [Header("AI Context")]
     [SerializeField] private ChatGPTManager chatGPTManager;
-    [SerializeField] private BlocklyCodeManager blocklyCodeManager;
+    [SerializeField] private TaskManager taskManager;
     [SerializeField] private HeldCodeBlockTracker heldCodeBlockTracker;
 
     public IEnumerator BuildAndSendPrompt(string userPrompt)
@@ -17,58 +18,8 @@ public class PromptGenerator : MonoBehaviour
             yield break;
 
         RequestInProgress = true;
-        TaskStatusResponse taskStatus = null;
-        bool requestFailed = false;
 
-        IEnumerator taskRequest = null;
-
-        try
-        {
-            taskRequest = WebsiteConnection.GetTaskStatus(
-                result => taskStatus = result,
-                () => requestFailed = true
-            );
-        }
-        catch (System.Exception e)
-        {
-            Debug.LogWarning(
-                $"Could not create task-status request: {e.Message}"
-            );
-
-            requestFailed = true;
-        }
-
-        if (taskRequest != null)
-        {
-            bool keepRunning = true;
-
-            while (keepRunning)
-            {
-                try
-                {
-                    keepRunning = taskRequest.MoveNext();
-                }
-                catch (System.Exception e)
-                {
-                    Debug.LogWarning(
-                        $"Task-status request failed: {e.Message}"
-                    );
-
-                    requestFailed = true;
-                    break;
-                }
-
-                if (keepRunning)
-                {
-                    yield return taskRequest.Current;
-                }
-            }
-        }
-
-        string blocklyCode =
-            blocklyCodeManager != null
-                ? blocklyCodeManager.GenerateBlocklyCode()
-                : "No Blockly code available.";
+        TaskStatusResponse taskStatus = taskManager.CurrentTaskStatus;
 
         string heldBlocks =
             heldCodeBlockTracker != null
@@ -77,7 +28,7 @@ public class PromptGenerator : MonoBehaviour
 
         string taskContext;
 
-        if (requestFailed || taskStatus == null || taskStatus.task == null)
+        if (taskStatus == null || taskStatus.task == null)
         {
             taskContext =
                 "The current task could not be retrieved.";
@@ -87,14 +38,28 @@ public class PromptGenerator : MonoBehaviour
             taskContext = BuildTaskContext(taskStatus);
         }
 
+        string currentCode =
+            taskStatus != null && !string.IsNullOrEmpty(taskStatus.currentCode)
+                ? taskStatus.currentCode
+                : "No code available.";
+
         string prompt =
-            $"Student Question: {userPrompt}\n" +
-            $"Current Task:\n{taskContext}\n" +
-            $"Current Blockly code:\n{blocklyCode}\n" +
+            $"Student Question: {userPrompt}\n\n" +
+            $"Current Task:\n{taskContext}\n\n" +
+            $"Current Code:\n{currentCode}\n\n" +
             $"Currently held blocks:\n{heldBlocks}\n";
 
-        Debug.Log(prompt);
-        chatGPTManager.AskChatGPT(prompt);
+        float questionTimestamp =
+            _transcriptManager.GetCurrentTaskTime();
+
+        chatGPTManager.AskChatGPT(
+            prompt,
+            userPrompt,
+            currentCode,
+            questionTimestamp
+        );
+
+        yield break;
     }
 
     private string BuildTaskContext(TaskStatusResponse response)

@@ -10,6 +10,7 @@ public class OutputTranscript : MonoBehaviour
     public List<string> agentResponse;
     public List<string> userResponse;
     public List<float> userResponseTime;
+    public List<float> timeStamps;
 
 
     // Start is called before the first frame update
@@ -46,6 +47,7 @@ public class OutputTranscript : MonoBehaviour
             int agentN = agentResponse.Count;
             int userN = userResponse.Count;
             int timeN = userResponseTime.Count;
+            int timeStampsN = timeStamps.Count;
 
             int i = 0, j = 0, k=0;
 

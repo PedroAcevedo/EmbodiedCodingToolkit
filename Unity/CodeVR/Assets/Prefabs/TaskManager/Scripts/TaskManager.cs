@@ -15,6 +15,7 @@ public class TaskManager : MonoBehaviour
     [SerializeField] private List<StartingBlockData> _startingBlocksData;
 
     [SerializeField] private bool _disable;
+    [SerializeField] private TranscriptManager _transcriptManager;
 
     public Action<TaskStatusResponse> OnTaskStatusChange;
 
@@ -34,6 +35,8 @@ public class TaskManager : MonoBehaviour
     private bool _taskIsCompleted = false;
 
     private float _checkStatusLoopTime = 1.0f;
+
+    private TaskStatusResponse _currentTaskStatus;
 
     void Awake()
     {
@@ -71,6 +74,8 @@ public class TaskManager : MonoBehaviour
 
     private void OnCheckStatusResult(TaskStatusResponse taskStatusResponse)
     {
+         _currentTaskStatus = taskStatusResponse;
+
         if (this.OnTaskStatusChange != null)
             this.OnTaskStatusChange.Invoke(taskStatusResponse);
 
@@ -96,6 +101,7 @@ public class TaskManager : MonoBehaviour
         this._currentTaskID = taskStatusResponse.task.id;
         this.SpawnStartingBlock(taskStatusResponse.task.id);
         this._currentState = State.Ready;
+        _transcriptManager.OnNewTask(taskStatusResponse.task.id);
     }
 
     private void SpawnStartingBlock(string taskID)
@@ -147,6 +153,11 @@ public class TaskManager : MonoBehaviour
         StreamWriter sw = new StreamWriter(this._taskLogsFilePath, true);
         sw.Write($"Task completed at;{Time.timeSinceLevelLoad};TaskID;{response.task.id};TaskTitle;{response.task.title}\n");
         sw.Close();
+    }
+
+    public TaskStatusResponse CurrentTaskStatus
+    {
+        get => _currentTaskStatus;
     }
 }
 

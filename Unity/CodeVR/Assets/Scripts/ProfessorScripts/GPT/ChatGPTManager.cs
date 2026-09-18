@@ -21,10 +21,17 @@ public enum TTSAPI
     ElevenLabsTTS
 }
 
+public enum BehaviorType
+{
+    Encouraging,
+    Explanation,
+    DirectSolution
+}
+
 public class ChatGPTManager : MonoBehaviour
 {
     public GameObject TextToSpeech;
-    public GameObject OutputTranscript;
+    public TranscriptManager TranscriptManager;
     public ConversationAnimation ConversationAnimation;
     [SerializeField] private GameObject Thoughtbubble;
 
@@ -45,8 +52,7 @@ public class ChatGPTManager : MonoBehaviour
 
     public TTSAPI TTSapi;
 
-    [Tooltip("'0' for Encouraging, '1' for Explanation, '2' for Direct Solution")]
-    public int BehaviorOption = 0;
+    public BehaviorType BehaviorOption = BehaviorType.Encouraging;
 
     [TextArea(5, 20)] public string Role;
     [TextArea(5, 20)] public string Environment;
@@ -112,8 +118,9 @@ public class ChatGPTManager : MonoBehaviour
     }
 
     // Send inquiries to ChatGPT.
-    public async void AskChatGPT(string userText)
+    public async void AskChatGPT(string prompt, string userQuestion, string currentCode, float questionTimestamp)
     {
+        float responseStartTime = Time.realtimeSinceStartup;
         if (openAI == null)
         {
             InitializeSelectedAPI();
@@ -130,11 +137,12 @@ public class ChatGPTManager : MonoBehaviour
             BuildSystemMessage();
         }
 
-        string responseText = await AskLLM(userText);
+        string responseText = await AskLLM(prompt);
 
         if (!string.IsNullOrWhiteSpace(responseText))
         {
-            HandleLLMResponse(responseText);
+            
+            HandleLLMResponse(prompt, userQuestion, responseText, questionTimestamp, currentCode, responseStartTime);
         }
     }
 
@@ -165,16 +173,17 @@ public class ChatGPTManager : MonoBehaviour
         return response.ToString();
     }
 
-    private void HandleLLMResponse(string responseText)
+    private void HandleLLMResponse(string prompt, string userQuestion, string responseText, float questionTimestamp, string currentCode, float responseStartTime)
     {
         Debug.Log(responseText);
 
         string processedResponse = ProcessResponseText(responseText);
+        float responseTime = Time.realtimeSinceStartup - responseStartTime;
         
 
-        if (OutputTranscript != null)
+        if (TranscriptManager != null)
         {
-            OutputTranscript.GetComponent<OutputTranscript>().agentResponse.Add(processedResponse);
+            TranscriptManager.RecordInteraction(questionTimestamp, userQuestion, currentCode, processedResponse, responseTime, BehaviorOption);
         }
 
         if (ConversationAnimation != null)
@@ -215,7 +224,7 @@ public class ChatGPTManager : MonoBehaviour
 
     private void SetBehavior()
     {
-        if (BehaviorOption == 0)
+        if (BehaviorOption == BehaviorType.Encouraging)
         {
             Behavior = @"Assistance Level: Encouragement Only
 
@@ -238,7 +247,7 @@ You must NOT:
 
 If the student directly asks for the answer, encourage them to continue working instead of providing it.";
         }
-        else if (BehaviorOption == 1)
+        else if (BehaviorOption == BehaviorType.Explanation)
         {
             Behavior = @"Assistance Level: Guided Assistance
 
@@ -263,7 +272,7 @@ Do NOT:
 
 Reveal only enough information to help with the student's current obstacle. Let the student perform the next reasoning step.";
         }
-        else if (BehaviorOption == 2)
+        else if (BehaviorOption == BehaviorType.DirectSolution)
         {
             Behavior = @"Assistance Level: Direct Solution
 
