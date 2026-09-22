@@ -448,6 +448,7 @@ export const oldTasks: Task[] = [
     description:
       "The function 'SayHi' should return 'Hello World'. Do this by connecting the exiting blocks in front of you.",
     functionName: "SayHi",
+    example: "",
     variables: [],
     testCases: [
       {
@@ -475,6 +476,7 @@ export const oldTasks: Task[] = [
     description:
       "The function 'SolveMathProblem' should return the value of 2 x 3. Do this by using the arithmetic block and number blocks in front of you.",
     functionName: "SolveMathProblem",
+    example: "",
     variables: [],
     testCases: [
       {
@@ -488,6 +490,7 @@ export const oldTasks: Task[] = [
     title: "Task 3: Sum of two variables",
     description:
       "The function 'SolveMathProblem' should return the sum of variables 'X' and 'Y'.",
+    example: "",
     functionName: "SolveMathProblem",
     variables: ["x", "y"],
     testCases: [
@@ -510,6 +513,7 @@ export const oldTasks: Task[] = [
     title: "Task 4: Add new blocks",
     description:
       "The function 'SolveMathProblem' should return the multiplication of the variables 'X' and 'Y'. You need to add the needed blocks from the menu to the left.",
+    example: "",
     functionName: "SolveMathProblem",
     variables: ["x", "y"],
     testCases: [
@@ -532,6 +536,7 @@ export const oldTasks: Task[] = [
     title: "Task 5: Bug in code",
     description:
       "The function 'IsAllowedPension' should return true if the given age is greater or equal to 62. The code starts out faulty. Can you fix it?",
+    example: "",
     functionName: "IsAllowedPension",
     variables: ["age"],
     testCases: [
@@ -562,6 +567,7 @@ export const oldTasks: Task[] = [
     title: "Task 6: Match number and function",
     description:
       "The function 'MakeMeTrue' should return true. Do this by putting the correct function call with the correct number. For example, a function that return 6 should be matched with the number 6.",
+    example: "",
     functionName: "MakeMeTrue",
     variables: [],
     testCases: [
@@ -576,6 +582,7 @@ export const oldTasks: Task[] = [
     title: "Task 7: Order numbers",
     description:
       "In the function 'OrderNumbers', move the number blocks such that they are in acceding order. That is, 0 1 2 3 4... Remember to only move the number blocks! You are not allowed to edit the input.",
+    example: "",
     functionName: "OrderNumbers",
     variables: [],
     testCases: [
@@ -632,6 +639,7 @@ export const oldTasks: Task[] = [
     title: "Task 8: Calculate Area",
     description:
       "The function 'CalculateArea' should return the area of a rectangle with the sides 'X' and 'Y'. However, if any of the sides are less than zero, the function should return 0",
+    example: "",
     functionName: "CalculateArea",
     variables: ["x", "y"],
     testCases: [
@@ -658,6 +666,7 @@ export const oldTasks: Task[] = [
     title: "Task 9: Create Function",
     description:
       "The function 'CallFunction' should call a new function that you need to create. The new function should be called 'foo' and have the inputs 'a' and 'b'. It should only return true if a > b, otherwise false. Call the function using x as parameter a and y as parameter b.",
+    example: "",
     functionName: "CallFunction",
     variables: ["x", "y"],
     testCases: [
@@ -679,6 +688,7 @@ export const oldTasks: Task[] = [
     id: "all_task_completed",
     title: "Done",
     description: "All tasks are completed!",
+    example: "",
     functionName: "NAN",
     variables: [],
     testCases: [

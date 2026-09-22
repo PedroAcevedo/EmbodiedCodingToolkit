@@ -18,3 +18,7 @@
 
     margin-bottom: 15px;
 }
+
+.task-examples {
+    white-space: pre-line
+}
