@@ -77,6 +77,8 @@ public class TestCasesPanel : MonoBehaviour
             Destroy(child.gameObject);
         }
 
+         _testCaseButtons.Clear();
+         
         passedTestCount = 0;
 
         for (int i = 0; i < taskStatus.testResults.Count; i++)

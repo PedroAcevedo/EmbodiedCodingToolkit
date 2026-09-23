@@ -27,11 +27,13 @@ async function testBlocklyCode(
       reject();
     }, 500);
 
-    try {
-      for (const testCase of task.testCases) {
-        outputFromCurrentlyBlocklyCode = "";
-        inputs = testCase.inputs;
-        expectedOutput = testCase.output;
+    for (const testCase of task.testCases) {
+      outputFromCurrentlyBlocklyCode = "";
+      inputs = testCase.inputs;
+      expectedOutput = testCase.output;
+
+      try {
+        var LoopTrap = 10000;
 
         eval(
           code +
@@ -42,38 +44,41 @@ async function testBlocklyCode(
           outputFromCurrentlyBlocklyCode =
             outputFromCurrentlyBlocklyCode.toString();
         } catch (error) {}
+      } catch (error: any) {
+        allTestsPassed = false;
+        outputFromCurrentlyBlocklyCode =
+          error?.message ?? error?.toString() ?? "Code execution failed.";
+      }
 
-        var readableTestInputs = "";
-        for (let index = 0; index < inputs.length; index++) {
-          const input = inputs[index];
-          const variable = task.variables[index];
-          readableTestInputs += variable + ": " + input;
-          if (index !== inputs.length - 1) {
-            readableTestInputs += ", ";
-          }
-        }
+      var readableTestInputs = "";
+      for (let index = 0; index < inputs.length; index++) {
+        const input = inputs[index];
+        const variable = task.variables[index];
+        readableTestInputs += variable + ": " + input;
 
-        var passed = outputFromCurrentlyBlocklyCode === testCase.output;
-
-        testResults.push({
-          inputs: readableTestInputs,
-          expectedOutput: testCase.output,
-          currentOutput: outputFromCurrentlyBlocklyCode,
-          passed: passed,
-        });
-
-        if (!passed) {
-          allTestsPassed = false;
-          if (firstFailedInputs == null) {
-            firstFailedInputs = inputs;
-            firstFailedExpectedOutput = expectedOutput;
-            firstFailedCurrentOutput = outputFromCurrentlyBlocklyCode;
-          }
+        if (index !== inputs.length - 1) {
+          readableTestInputs += ", ";
         }
       }
-    } catch (error: any) {
-      allTestsPassed = false;
-      outputFromCurrentlyBlocklyCode = error.message as string;
+
+      var passed = outputFromCurrentlyBlocklyCode === testCase.output;
+
+      testResults.push({
+        inputs: readableTestInputs,
+        expectedOutput: testCase.output,
+        currentOutput: outputFromCurrentlyBlocklyCode,
+        passed: passed,
+      });
+
+      if (!passed) {
+        allTestsPassed = false;
+
+        if (firstFailedInputs == null) {
+          firstFailedInputs = inputs;
+          firstFailedExpectedOutput = expectedOutput;
+          firstFailedCurrentOutput = outputFromCurrentlyBlocklyCode;
+        }
+      }
     }
 
     if (firstFailedInputs != null) {
@@ -87,6 +92,7 @@ async function testBlocklyCode(
       const input = inputs[index];
       const variable = task.variables[index];
       readableInputs += variable + ": " + input;
+
       if (index !== inputs.length - 1) {
         readableInputs += ", ";
       }

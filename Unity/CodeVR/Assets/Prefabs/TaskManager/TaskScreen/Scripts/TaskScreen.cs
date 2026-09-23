@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public class TaskScreen : MonoBehaviour
@@ -7,7 +8,6 @@ public class TaskScreen : MonoBehaviour
     [SerializeField] private GameObject _taskInfoContainer;
     [SerializeField] private GameObject _taskPanel;
     [SerializeField] private GameObject _testsPanel;
-    [SerializeField] private GameObject _taskCompletedContainer;
     [SerializeField] private GameObject _taskLoadingContainer;
 
     [Header("Header")]
@@ -16,11 +16,10 @@ public class TaskScreen : MonoBehaviour
     
     [Header("Task Info")]
     [SerializeField] private TMPro.TMP_Text _title;
+    [SerializeField] private GameObject _completedIcon;
     [SerializeField] private TMPro.TMP_Text _description;
-    [SerializeField] private TMPro.TMP_Text _testStatus;
     [SerializeField] private TMPro.TMP_Text _inputs;
     [SerializeField] private TMPro.TMP_Text _expectedOutput;
-    [SerializeField] private TMPro.TMP_Text _currentOutput;
     [SerializeField] private TMPro.TMP_Text _example;
     [SerializeField] private AudioSource _audioSource;
 
@@ -42,25 +41,17 @@ public class TaskScreen : MonoBehaviour
         
         _title.text = taskStatus.task.title;
         _description.text = taskStatus.task.description;
+        _completedIcon.SetActive(taskStatus.isCompleted);
 
-        _taskCompletedContainer.SetActive(
-            taskStatus.isCompleted && _taskManager.CurrentState == TaskManager.State.Ready
-        );
         _taskLoadingContainer.SetActive(
             _taskManager.CurrentState == TaskManager.State.Loading
         );
         _taskInfoContainer.SetActive(
-            !taskStatus.isCompleted && _taskManager.CurrentState == TaskManager.State.Ready
+            _taskManager.CurrentState == TaskManager.State.Ready
         );  
-        
-        if (_testStatus != null)
-            _testStatus.text = "Tests failed when:";
             
-        _inputs.text = taskStatus.failedTest?.inputs ?? "";
+        _inputs.text = taskStatus.failedTest?.inputs ?? "None";
         _expectedOutput.text = taskStatus.failedTest.output;
-
-        if (_currentOutput != null)
-            _currentOutput.text = taskStatus.currentOutput;
         
         _example.text = TaskExamples.GetExample(taskStatus.task.id);
     }
