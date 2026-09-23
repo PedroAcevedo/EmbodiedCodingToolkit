@@ -62,6 +62,8 @@ export const TaskPresenter: FC<TaskPresenterProps> = (props) => {
       <div className="task-presenter__description">
         <h3>{props.task.title}</h3>
         <p>{props.task.description}</p>
+        <h4>Examples</h4>
+        <p className="task-examples" >{props.task.example}</p>
       </div>
 
       <div className="task-presenter__task-state">
