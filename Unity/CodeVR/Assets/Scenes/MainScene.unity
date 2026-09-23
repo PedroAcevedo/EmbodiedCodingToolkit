@@ -4174,11 +4174,11 @@ MonoBehaviour:
   TranscriptManager: {fileID: 1053564034}
   ConversationAnimation: {fileID: 1129810247}
   Thoughtbubble: {fileID: 876144970}
-  LLMapi: 0
+  LLMapi: 1
   OpenAIModel: gpt-4o
-  AzureModel: gpt-5-nano
+  AzureModel: gpt-5
   AzureAuthPath: Assets/Resources/azure-open-ai.json
-  AzureEndpoint: acevedo-llm-avatars.openai.azure.com/openai/
+  AzureEndpoint: acevedo-llm-conversational-avatars
   TTSapi: 0
   BehaviorOption: 1
   Role: 'You are an AI programming tutor assisting a beginner student during an interactive
