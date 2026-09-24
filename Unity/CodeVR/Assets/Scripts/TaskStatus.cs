@@ -27,6 +27,7 @@ public class TaskStatus
     public string id;
     public string title;
     public string description;
+    public string example;
     public string functionName;
     public List<string> variables;
     public List<TaskStatusTest> testCases;

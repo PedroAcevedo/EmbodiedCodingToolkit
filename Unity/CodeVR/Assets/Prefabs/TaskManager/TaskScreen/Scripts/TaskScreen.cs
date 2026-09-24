@@ -53,7 +53,7 @@ public class TaskScreen : MonoBehaviour
         _inputs.text = taskStatus.failedTest?.inputs ?? "None";
         _expectedOutput.text = taskStatus.failedTest.output;
         
-        _example.text = TaskExamples.GetExample(taskStatus.task.id);
+        _example.text = taskStatus.task.example;
     }
 
     private void CheckForTaskComplated(TaskStatusResponse taskStatus)
