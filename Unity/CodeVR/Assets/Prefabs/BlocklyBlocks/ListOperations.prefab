@@ -123,11 +123,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3184931884940399610, guid: f4d5111c3c2a141e78033c2b787575ad, type: 3}
       propertyPath: _startText
-      value: Of List
+      value: OF LIST
       objectReference: {fileID: 0}
     - target: {fileID: 472953189859411272, guid: f4d5111c3c2a141e78033c2b787575ad, type: 3}
       propertyPath: m_text
-      value: Of List
+      value: OF LIST
       objectReference: {fileID: 0}
     - target: {fileID: 472953189859411272, guid: f4d5111c3c2a141e78033c2b787575ad, type: 3}
       propertyPath: m_fontSize
@@ -135,7 +135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2194244225480463897, guid: f4d5111c3c2a141e78033c2b787575ad, type: 3}
       propertyPath: m_text
-      value: Of List
+      value: OF LIST
       objectReference: {fileID: 0}
     - target: {fileID: 2194244225480463897, guid: f4d5111c3c2a141e78033c2b787575ad, type: 3}
       propertyPath: m_fontSize
@@ -1004,7 +1004,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9427996589336988, guid: a34e6df8b375543b5986556f8dd5ff09, type: 3}
       propertyPath: m_Name
-      value: SumOfList
+      value: ListOperations
       objectReference: {fileID: 0}
     - target: {fileID: 1608641029879533589, guid: a34e6df8b375543b5986556f8dd5ff09, type: 3}
       propertyPath: m_RootOrder

@@ -114,32 +114,36 @@ PrefabInstance:
     m_TransformParent: {fileID: 6185149272343843238}
     m_Modifications:
     - target: {fileID: -3184931884940399610, guid: f4d5111c3c2a141e78033c2b787575ad, type: 3}
+      propertyPath: _width
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: -3184931884940399610, guid: f4d5111c3c2a141e78033c2b787575ad, type: 3}
       propertyPath: _margin
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3184931884940399610, guid: f4d5111c3c2a141e78033c2b787575ad, type: 3}
       propertyPath: _startText
-      value: Round
+      value: ROUND
       objectReference: {fileID: 0}
     - target: {fileID: 472953189859411272, guid: f4d5111c3c2a141e78033c2b787575ad, type: 3}
       propertyPath: m_text
-      value: Round
+      value: ROUND
       objectReference: {fileID: 0}
     - target: {fileID: 472953189859411272, guid: f4d5111c3c2a141e78033c2b787575ad, type: 3}
       propertyPath: m_fontSize
-      value: 0.3
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 2194244225480463897, guid: f4d5111c3c2a141e78033c2b787575ad, type: 3}
       propertyPath: m_text
-      value: Round
+      value: ROUND
       objectReference: {fileID: 0}
     - target: {fileID: 2194244225480463897, guid: f4d5111c3c2a141e78033c2b787575ad, type: 3}
       propertyPath: m_fontSize
-      value: 0.3
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 3249202840564888947, guid: f4d5111c3c2a141e78033c2b787575ad, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 3249202840564888947, guid: f4d5111c3c2a141e78033c2b787575ad, type: 3}
       propertyPath: m_SizeDelta.y
@@ -147,7 +151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3887941081489024546, guid: f4d5111c3c2a141e78033c2b787575ad, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 3887941081489024546, guid: f4d5111c3c2a141e78033c2b787575ad, type: 3}
       propertyPath: m_SizeDelta.y
