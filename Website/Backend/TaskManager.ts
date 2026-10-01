@@ -8,8 +8,31 @@ export default class TaskManager {
   private testResults: TestCaseResult[] = [];
   private currentCode: string = "";
 
+  private taskOrder: string[] = [
+    "caesar_cipher",
+    "abundant_number",
+    "rle_decompression",
+    "star_out",
+    "centered_average",
+    "not_alone",
+    "linear_in",
+    "all_task_completed",
+  ];
+
+  private get orderedTasks(): Task[] {
+    return this.taskOrder.map((taskId) => {
+      const task = allTasks.find((task) => task.id === taskId);
+
+      if (!task) {
+        throw new Error(`Task not found: ${taskId}`);
+      }
+
+      return task;
+    });
+  }
+
   public get currentActiveTask() {
-    return allTasks[this.currentTaskIndex];
+    return this.orderedTasks[this.currentTaskIndex];
   }
 
   public get currentTaskStatus(): TaskStatus {
@@ -25,7 +48,7 @@ export default class TaskManager {
   }
 
   private get isLastTask() {
-    return this.currentTaskIndex == allTasks.length - 1;
+    return this.currentTaskIndex == this.orderedTasks.length - 1;
   }
 
   public moveToNextTask() {

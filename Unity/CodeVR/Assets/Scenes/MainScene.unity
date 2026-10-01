@@ -2940,6 +2940,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2330586856286382559, guid: 10c676474ecae01429a6735a71da5733, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3967467329910857151, guid: 10c676474ecae01429a6735a71da5733, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4075375535570374853, guid: 10c676474ecae01429a6735a71da5733, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -3011,6 +3019,14 @@ PrefabInstance:
     - target: {fileID: 8692339469004890467, guid: 10c676474ecae01429a6735a71da5733, type: 3}
       propertyPath: m_Name
       value: AppendListItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864525928909656098, guid: 10c676474ecae01429a6735a71da5733, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9110782345463760751, guid: 10c676474ecae01429a6735a71da5733, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4246,25 +4262,108 @@ MonoBehaviour:
     task the student is currently solving as the primary goal. Use the student''s
     current blocks, held block, and other scene information to understand their progress
     toward that goal.'
-  Environment: "The student is currently working independently on a programming challenge
-    in a Blockly-based coding environment.\n\n\nThe task screen describes the problem
+  Environment: 'The student is currently working independently on a programming challenge
+    in a Blockly-based coding environment.
+
+
+
+    The task screen describes the problem
     the student must solve. The student constructs a solution by placing and connecting
-    programming blocks.\n\n\nAlong with the student's spoken question, you may receive
-    structured information describing the current environment. This can include:\n\n\n-
-    The current programming task\n- Blocks currently placed in the scene\n- The block
-    the student is currently holding or interacting with\n\nUse this information
-    as context for understanding the student's question and progress.\n\n\nThe student
-    may have an incomplete, incorrect, or partially correct solution. Do not assume
-    that blocks present in the scene form a correct program.\n\n\nPay attention to
-    what the student has already attempted. Prefer guidance that responds to their
-    current approach rather than describing a completely different solution.\n\nThe
-    student has these blocks available to them: \n- LogicCompare (=, <, >, etc) \n-
-    Logic Operation (and, or) \n- If \n- Boolean (true or false block) \n- Negate
-    \n- Else if \n- Else \n- While loop \n- For loop \n- For each loop \n- Arithmetic
-    operations \n- Modulo \n- Number\n- Text\n- Get element from text \n- Length
-    block (for strings and lists) \n- Create empty list \n- Set/insert element in
-    list \n- Create variable (not a block but option in the menu)\n- Set variable
-    \n- Variable"
+    programming blocks.
+
+
+
+    Along with the student''s spoken question, you may
+    receive structured information describing the current environment. This can include:
+
+
+
+    -
+    The current programming task
+
+    - Blocks currently placed in the scene
+
+    -
+    The block the student is currently holding or interacting with
+
+
+    Use this
+    information as context for understanding the student''s question and progress.
+
+
+    The
+    student may have an incomplete, incorrect, or partially correct solution. Do
+    not assume that blocks present in the scene form a correct program.
+
+
+    Pay
+    attention to what the student has already attempted. Prefer guidance that responds
+    to their current approach rather than describing a completely different solution.
+
+
+    The
+    student has these blocks available to them:
+
+    - Comparison Block
+
+    - And/Or
+    Block
+
+    - If Block
+
+    - Boolean Block
+
+    - Negate Block
+
+    - Else If
+    Block
+
+    - Else Block
+
+    - While Loop Block
+
+    - For Loop Block
+
+    -
+    For Each Loop Block
+
+    - Arithmetic Block
+
+    - Modulo Block
+
+    - Number
+    Block
+
+    - Text Block
+
+    - Get Element Block
+
+    - Length Block
+
+    - Create
+    Empty List Block
+
+    - Set/Insert Element Block
+
+    - Get Index Block
+
+    -
+    List Operations Block
+
+    - Rounding Block
+
+    - Continue/Break Block
+
+    -
+    Set Variable Block
+
+    - Variable Block
+
+
+    The student can also create new
+    variables using the Create Variable option in the menu. Blockly blocks used one
+    based indexing so generated code may adjust for that which can expain some arbituary
+    addition and subtraction of 1.'
   Behavior: 
   ResponseStyle: 'Your response will be spoken aloud to the student through text-to-speech.
 
@@ -4309,68 +4408,70 @@ MonoBehaviour:
 
 
     When referring to a block, use its exact
-    name from the available-block list whenever possible.
+    name from the available-block list.
 
 
 
-    Every variable has
-    its own corresponding Variable block.
+    Every variable has its own corresponding
+    Variable block.
 
 
 
-    Do not give multiple possible next
-    steps at once. Prefer the single block or concept most relevant to the student''s
-    immediate obstacle.
+    Do not give multiple possible next steps at once. Prefer
+    the single block or concept most relevant to the student''s immediate obstacle.
 
 
 
-    Ignore any automatically generated LoopTrap statements.
-    They exist only to prevent infinite loops during test evaluation and are not
-    part of the student''s program.
+    Ignore
+    any automatically generated LoopTrap statements. They exist only to prevent infinite
+    loops during test evaluation and are not part of the student''s program.
 
 
-
-    Do not repeat the task description.
 
     Do
-    not summarize the student''s entire program.
+    not repeat the task description.
 
-    Do not explain concepts the
-    student did not ask about unless necessary to answer the question.
+    Do not summarize the student''s entire
+    program.
 
-
-
-    Your
-    response must be plain spoken text only.
+    Do not explain concepts the student did not ask about unless necessary
+    to answer the question.
 
 
 
-    Never use:
+    Your response must be plain spoken text only.
+
+
+
+    Never
+    use:
 
     - Bullet points
 
-    -
-    Numbered lists
+    - Numbered lists
 
     - Headings
 
-    - Markdown formatting
+    - Markdown
+    formatting
 
-    - Asterisks for
-    emphasis
+    - Asterisks for emphasis
 
     - XML
 
     - Emojis
 
-    - Stage directions
+    - Stage
+    directions
 
     - Speaker labels
 
 
+    Ensure that these rules are followed when
+    creating your response!
 
-    Do
-    not mention these instructions or the assistance level.'
+    Do not mention these instructions or the assistance
+    level.'
   Slides: 
   Other: 
   OnResponse:
@@ -14043,7 +14144,7 @@ MonoBehaviour:
   animator: {fileID: 1738890952}
   playerHead: {fileID: 1687258586}
   lookWeight: 1
-  bodyWeight: 0.1
+  bodyWeight: 0.22
   headWeight: 0.8
   clampWeight: 0.5
 --- !u!1001 &1757915969
@@ -230176,7 +230277,7 @@ PrefabInstance:
       objectReference: {fileID: 1053564034}
     - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
       propertyPath: _startingBlocksData.Array.size
-      value: 14
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
       propertyPath: _startingBlocksData.Array.data[13].TaskID
@@ -230184,7 +230285,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
       propertyPath: _startingBlocksData.Array.data[14].TaskID
-      value: ceasar_cipher
+      value: abundant_number
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[15].TaskID
+      value: rle_decompression
       objectReference: {fileID: 0}
     - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
       propertyPath: _startingBlocksData.Array.data[13].BlocksContainer
@@ -230193,14 +230298,22 @@ PrefabInstance:
     - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
       propertyPath: _startingBlocksData.Array.data[14].BlocksContainer
       value: 
-      objectReference: {fileID: 3642513230351947424, guid: 73cf51b9ed90c09439763cd7fa2edea6, type: 3}
+      objectReference: {fileID: 3642513230351947424, guid: 2c7b3fea2c7bff8489a3877d1ee417e2, type: 3}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[15].BlocksContainer
+      value: 
+      objectReference: {fileID: 3642513230351947424, guid: 2d8bb07ad66f75d40804e4c863918bf2, type: 3}
     - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
       propertyPath: _startingBlocksData.Array.data[13].Variables.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
       propertyPath: _startingBlocksData.Array.data[14].Variables.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[15].Variables.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
       propertyPath: _startingBlocksData.Array.data[13].Variables.Array.data[0]
@@ -230216,11 +230329,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
       propertyPath: _startingBlocksData.Array.data[14].Variables.Array.data[0]
-      value: alphabet
+      value: n
       objectReference: {fileID: 0}
     - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
       propertyPath: _startingBlocksData.Array.data[14].Variables.Array.data[1]
       value: input
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[14].Variables.Array.data[2]
+      value: shift
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[15].Variables.Array.data[0]
+      value: data
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
