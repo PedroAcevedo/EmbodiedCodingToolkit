@@ -104,6 +104,11 @@ export const TaskPresenter: FC<TaskPresenterProps> = (props) => {
           <div className="task-presenter__values">
             {taskState.output ? taskState.output : <i>EMPTY</i>}
           </div>
+          <Button onClick={onNextTaskButtonClicked} variant="contained">
+            <b>
+              {props.isLoadingNextTask ? "Loading..." : "Skip task"}
+            </b>
+          </Button>
         </>
       )}
     </div>
