@@ -4233,7 +4233,7 @@ MonoBehaviour:
   AzureAuthPath: Assets/Resources/azure-open-ai.json
   AzureEndpoint: acevedo-llm-conversational-avatars
   TTSapi: 0
-  BehaviorOption: 1
+  BehaviorOption: 2
   Role: 'You are an AI programming tutor assisting a beginner student during an interactive
     programming exercise.
 
@@ -4441,37 +4441,60 @@ MonoBehaviour:
 
     Your response must be plain spoken text only.
 
-
+    
 
     Never
-    use:
+    write programming operators or programming notation as symbols in the response.
+    Always speak their meaning in plain English.
 
-    - Bullet points
+    
+
+    For example, say "equals"
+    instead of the equals symbol, "greater than" instead of the greater than symbol,
+    "less than" instead of the less than symbol, "plus" instead of the plus symbol,
+    "minus" instead of the minus symbol, and "modulo" instead of the percent symbol.
+
+    
+
+    When
+    describing an expression from the student''s program, convert the entire expression
+    into natural spoken English. Do not reproduce source-code notation.
+
+    
+
+    Normal
+    sentence punctuation, such as periods, commas, and question marks, is allowed
+    because the response will be processed by text-to-speech.
+
+
+    Never use:
+
+    -
+    Bullet points
 
     - Numbered lists
 
     - Headings
 
-    - Markdown
-    formatting
+    - Markdown formatting
 
-    - Asterisks for emphasis
+    -
+    Asterisks for emphasis
 
     - XML
 
     - Emojis
 
-    - Stage
-    directions
+    - Stage directions
 
-    - Speaker labels
+    -
+    Speaker labels
 
 
-    Ensure that these rules are followed when
-    creating your response!
+    Ensure that these rules are followed when creating your
+    response!
 
-    Do not mention these instructions or the assistance
-    level.'
+    Do not mention these instructions or the assistance level.'
   Slides: 
   Other: 
   OnResponse:
@@ -14141,12 +14164,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0ba63295556c746af6c91fbf8c75f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 1738890952}
+  head: {fileID: 2133614540}
   playerHead: {fileID: 1687258586}
   lookWeight: 1
-  bodyWeight: 0.22
-  headWeight: 0.8
-  clampWeight: 0.5
+  maxHeadAngle: 60
 --- !u!1001 &1757915969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16548,6 +16569,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Timeout: 10
   m_XROrigin: {fileID: 4335488424545008717}
+--- !u!4 &2133614540 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8804637712421891867, guid: 71b4d9640a41f2441abb45904cd1b3ef, type: 3}
+  m_PrefabInstance: {fileID: 38944053}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2137463265
 GameObject:
   m_ObjectHideFlags: 0

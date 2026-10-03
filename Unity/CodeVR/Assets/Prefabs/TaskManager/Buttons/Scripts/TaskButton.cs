@@ -8,6 +8,7 @@ public class TaskButton : MonoBehaviour
     [SerializeField] private Button _button;
     [SerializeField] private GameObject _lockIcon;
     [SerializeField] private GameObject _unlockIcon;
+    [SerializeField] private TranscriptManager _transcriptManager;
 
     private TaskManager _taskManager;
 
@@ -32,7 +33,7 @@ public class TaskButton : MonoBehaviour
             return;
         }
 
-        this.ToggleDisable(!taskStatus.isCompleted);
+        this.ToggleDisable(!taskStatus.isCompleted && _transcriptManager.GetCurrentTaskTime() < 600);
     }
 
     private void ToggleDisable(bool disable)

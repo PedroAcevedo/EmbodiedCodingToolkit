@@ -2721,7 +2721,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9147208355751664282, guid: a34e6df8b375543b5986556f8dd5ff09, type: 3}
       propertyPath: _blocklyFields.Array.data[0].StaticValue
-      value: SET
+      value: INSERT
       objectReference: {fileID: 0}
     - target: {fileID: 9147208355751664282, guid: a34e6df8b375543b5986556f8dd5ff09, type: 3}
       propertyPath: _blocklyFields.Array.data[1].StaticValue

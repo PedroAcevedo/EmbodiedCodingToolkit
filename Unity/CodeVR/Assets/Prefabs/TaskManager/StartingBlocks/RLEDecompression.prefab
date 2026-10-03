@@ -133,7 +133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6917181587169549558, guid: 949ac1ec9775b4a5f9846654e49923be, type: 3}
       propertyPath: _value
-      value: CaesarCipher
+      value: RLEDecompress
       objectReference: {fileID: 0}
     - target: {fileID: 6917181587169549558, guid: 949ac1ec9775b4a5f9846654e49923be, type: 3}
       propertyPath: _startValue
