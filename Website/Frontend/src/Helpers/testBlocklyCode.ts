@@ -33,6 +33,7 @@ async function testBlocklyCode(
         inputs = testCase.inputs;
         expectedOutput = testCase.output;
 
+        var LoopTrap = 10000;
         eval(
           code +
             `outputFromCurrentlyBlocklyCode = ${task.functionName}(${testCase.inputs.join(",")});`,

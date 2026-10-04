@@ -54,7 +54,8 @@ export const WebsiteBlocklyPage: FC = (props) => {
         const generateCodeFromCurrentWorkspace = () => {
             if (blocklyContainer.current == null) return;
             if (primaryWorkSpace == null) return;
-            
+            BlocklyJs.INFINITE_LOOP_TRAP =
+                'if (--LoopTrap == 0) throw new Error("Infinite loop.");\n';
             const code = BlocklyJs.workspaceToCode(Blockly.getMainWorkspace());
             setCode(code);
         }
