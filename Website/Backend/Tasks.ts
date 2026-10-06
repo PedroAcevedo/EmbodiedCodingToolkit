@@ -14,7 +14,45 @@ export interface TestCases {
 }
 
 export const allTasks: Task[] = [
+   {
+    id: "math_task_1",
+    title: "Simple multiplication",
+    description:
+      "The function 'SolveMathProblem' should return the value of 2 x 3. Do this by using the arithmetic block and number blocks in front of you.",
+    functionName: "SolveMathProblem",
+    example: "",
+    variables: [],
+    testCases: [
+      {
+        inputs: [],
+        output: "6",
+      },
+    ],
+  },
   {
+    id: "math_task_2",
+    title: "Sum of two variables",
+    description:
+      "The function 'SolveMathProblem' should return the sum of variables 'X' and 'Y'.",
+    example: "",
+    functionName: "SolveMathProblem",
+    variables: ["x", "y"],
+    testCases: [
+      {
+        inputs: ["-1", "1"],
+        output: "0",
+      },
+      {
+        inputs: ["0", "0"],
+        output: "0",
+      },
+      {
+        inputs: ["4", "6"],
+        output: "10",
+      },
+    ],
+  }, 
+    {
       "id": "caesar_cipher",
       "title": "Task 1: Caesar Cipher",
       "description": "Encrypt a non-empty list of uppercase letters using a Caesar cipher.\n\nEach letter is shifted to the right in the alphabet by a non-negative integer shift. If the shift moves past Z, continue from A.\n\nReturn the encrypted list.",
