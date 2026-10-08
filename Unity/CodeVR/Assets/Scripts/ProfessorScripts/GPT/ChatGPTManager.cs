@@ -187,7 +187,7 @@ public class ChatGPTManager : MonoBehaviour
 
         if (TranscriptManager != null)
         {
-            TranscriptManager.RecordInteraction(questionTimestamp, userQuestion, currentCode, processedResponse, responseTime, BehaviorOption);
+            TranscriptManager.RecordInteraction(questionTimestamp, currentCode,  BehaviorOption, userQuestion, processedResponse, responseTime);
         }
 
         if (ConversationAnimation != null)

@@ -9,6 +9,7 @@ public class TaskButton : MonoBehaviour
     [SerializeField] private GameObject _lockIcon;
     [SerializeField] private GameObject _unlockIcon;
     [SerializeField] private TranscriptManager _transcriptManager;
+    [SerializeField] private ChatGPTManager _chatGPTManager;
 
     private TaskManager _taskManager;
 
@@ -45,6 +46,9 @@ public class TaskButton : MonoBehaviour
 
     private void OnClick()
     {
+        _transcriptManager.RecordInteraction(
+                _transcriptManager.GetCurrentTaskTime(), _currentTaskStatus.currentCode, _chatGPTManager.BehaviorOption
+        );
         this.ToggleDisable(true);
         this._forceLockTaskByID = this._currentTaskStatus.task.id;
         this._taskManager.LoadNextTask();

@@ -15,7 +15,10 @@ public class TaskManager : MonoBehaviour
     [SerializeField] private List<StartingBlockData> _startingBlocksData;
 
     [SerializeField] private bool _disable;
+
     [SerializeField] private TranscriptManager _transcriptManager;
+
+    [SerializeField] private ChatGPTManager _chatGPTManager;
 
     public Action<TaskStatusResponse> OnTaskStatusChange;
 
@@ -84,6 +87,9 @@ public class TaskManager : MonoBehaviour
             this._taskIsCompleted = true;
             this.LogTaskCompleted(taskStatusResponse);
             Debug.Log("Log Task Completed!");
+            _transcriptManager.RecordInteraction(
+                _transcriptManager.GetCurrentTaskTime(), _currentTaskStatus.currentCode, _chatGPTManager.BehaviorOption
+            );
         }
 
         if (_taskIsCompleted && !taskStatusResponse.isCompleted)

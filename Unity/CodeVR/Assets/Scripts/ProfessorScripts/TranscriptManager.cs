@@ -37,11 +37,12 @@ public class TranscriptManager : MonoBehaviour
 
     public void RecordInteraction(
         float timestamp,
-        string prompt,
         string currentCode,
-        string response,
-        float responseTime,
-        BehaviorType behaviorType)
+        BehaviorType behaviorType,
+        string prompt="none",
+        string response="none",
+        float responseTime=-1
+        )
     {
         TranscriptEntry entry = new TranscriptEntry
         {

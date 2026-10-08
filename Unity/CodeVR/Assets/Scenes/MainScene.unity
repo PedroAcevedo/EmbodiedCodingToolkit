@@ -5574,6 +5574,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6514976626352034381, guid: 7f9b88e6f4f13ed4bbccf89f55661a1c, type: 3}
+      propertyPath: _chatGPTManager
+      value: 
+      objectReference: {fileID: 673948908}
+    - target: {fileID: 6514976626352034381, guid: 7f9b88e6f4f13ed4bbccf89f55661a1c, type: 3}
       propertyPath: _transcriptManager
       value: 
       objectReference: {fileID: 1053564034}
@@ -14262,8 +14266,8 @@ MonoBehaviour:
   silencePulseThreshold: 3
   loCutoff: 0.03
   hiCutoff: 0.75
-  useAdvDyn: 0
-  advDynPrimaryBias: 0.5
+  useAdvDyn: 1
+  advDynPrimaryBias: 0.201
   useAdvDynJitter: 0
   advDynJitterAmount: 0.25
   advDynJitterProb: 0.25
@@ -14353,6 +14357,77 @@ MonoBehaviour:
       previewDisplayMode: 0
       collectionExpand: 0
     trigger: 0
+  - expData:
+      name: viseme 1
+      components:
+      - name: component 0
+        controlType: 1
+        lipsyncControlType: 1
+        emoteControlType: 0
+        eyesControlType: 1
+        durationDelay: 0
+        durationOn: 0.08
+        durationHold: 0
+        durationOff: 0.06
+        isSmoothDisable: 0
+        isPersistent: 0
+        expressionType: 0
+        easing: 4
+        expressionHandler: 0
+        isAnimatorControlled: 0
+        useOffset: 0
+        useOffsetFollow: 1
+        inspFoldout: 1
+        enabled: 1
+        isBonePreviewUpdated: 0
+        frac: 1
+        directionType: 0
+      controllerVars:
+      - bone: {fileID: 860378434}
+        baseTform:
+          pos: {x: -0.030539703, y: 0.011510829, z: 0.00000004308589}
+          rot: {x: 0.0012046641, y: 0.004261407, z: -0.76410204, w: 0.6450802}
+          scale: {x: 1.0000001, y: 1, z: 1.0000001}
+        startTform:
+          pos: {x: -0.030539703, y: 0.011510829, z: 0.00000004308589}
+          rot: {x: 0.0012046641, y: 0.004261407, z: -0.76410204, w: 0.6450802}
+          scale: {x: 1.0000001, y: 1, z: 1.0000001}
+        endTform:
+          pos: {x: -0.0259, y: 0.0123, z: 0}
+          rot: {x: 0.0012046641, y: 0.004261407, z: -0.76410204, w: 0.6450802}
+          scale: {x: 1.0000001, y: 1, z: 1.0000001}
+        fracPos: 1
+        fracRot: 1
+        fracScl: 1
+        inspIsSetStart: 1
+        inspIsSetEnd: 1
+        umaUepProxy: {fileID: 0}
+        uepAmount: 0
+        smr: {fileID: 0}
+        blendIndex: 0
+        minShape: 0
+        maxShape: 1
+        eyeGizmo: {fileID: 0}
+        eventSender: {fileID: 0}
+        animator: {fileID: 1738890952}
+        isTriggerParameterBiDirectional: 0
+        eventIdentityName: 
+        onState: 2
+        display2dImage: 0
+        isRestNull: 0
+        spriteRenderer: {fileID: 0}
+        sprites: []
+        uguiRenderer: {fileID: 0}
+        textureRenderer: {fileID: 0}
+        materialIndex: 0
+        backupTextures: []
+        textures: []
+        materialRenderer: {fileID: 0}
+        materials: []
+      inspFoldout: 1
+      previewDisplayMode: 0
+      collectionExpand: 0
+    trigger: 0.01
   configReady: 1
   configNotReadyNotified: 0
   warnOnNullRefs: 1
@@ -14360,7 +14435,7 @@ MonoBehaviour:
   useAudioAnalysis: 1
   needAudioSource: 1
   inspStateFoldoutProcessing: 1
-  inspStateFoldoutSettings: 0
+  inspStateFoldoutSettings: 1
   inspStateFoldoutVisemes: 1
   inspCollectionDisplayMode: 0
   inspAnalysisDisplay: 0
@@ -230497,6 +230572,10 @@ PrefabInstance:
       propertyPath: _disable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _chatGPTManager
+      value: 
+      objectReference: {fileID: 673948908}
     - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
       propertyPath: _transcriptManager
       value: 
