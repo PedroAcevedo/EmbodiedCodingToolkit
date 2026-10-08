@@ -33,7 +33,7 @@ public class TaskButton : MonoBehaviour
             return;
         }
 
-        this.ToggleDisable(!taskStatus.isCompleted && _transcriptManager.GetCurrentTaskTime() < 600);
+        this.ToggleDisable(!taskStatus.isCompleted && _transcriptManager.GetCurrentTaskTime() < 2);
     }
 
     private void ToggleDisable(bool disable)

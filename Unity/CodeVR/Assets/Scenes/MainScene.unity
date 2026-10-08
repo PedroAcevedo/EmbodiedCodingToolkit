@@ -230303,7 +230303,7 @@ PrefabInstance:
       objectReference: {fileID: 1053564034}
     - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
       propertyPath: _startingBlocksData.Array.size
-      value: 16
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
       propertyPath: _startingBlocksData.Array.data[13].TaskID
@@ -230318,6 +230318,22 @@ PrefabInstance:
       value: rle_decompression
       objectReference: {fileID: 0}
     - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[16].TaskID
+      value: star_out
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[17].TaskID
+      value: centered_average
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[18].TaskID
+      value: not_alone
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[19].TaskID
+      value: linear_in
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
       propertyPath: _startingBlocksData.Array.data[13].BlocksContainer
       value: 
       objectReference: {fileID: 3642513230351947424, guid: 73cf51b9ed90c09439763cd7fa2edea6, type: 3}
@@ -230330,6 +230346,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3642513230351947424, guid: 2d8bb07ad66f75d40804e4c863918bf2, type: 3}
     - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[16].BlocksContainer
+      value: 
+      objectReference: {fileID: 3642513230351947424, guid: eff5c7a643b5eaf468ad09d094972518, type: 3}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[17].BlocksContainer
+      value: 
+      objectReference: {fileID: 3642513230351947424, guid: 11527b62e215e6f47a759358410dee9b, type: 3}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[18].BlocksContainer
+      value: 
+      objectReference: {fileID: 3642513230351947424, guid: 6a488f2ff35282043af38819b6dc66ac, type: 3}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[19].BlocksContainer
+      value: 
+      objectReference: {fileID: 3642513230351947424, guid: f1ceb6d27d82d4b498d4ba57a9cbe390, type: 3}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
       propertyPath: _startingBlocksData.Array.data[13].Variables.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -230340,6 +230372,22 @@ PrefabInstance:
     - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
       propertyPath: _startingBlocksData.Array.data[15].Variables.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[16].Variables.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[17].Variables.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[18].Variables.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[19].Variables.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
       propertyPath: _startingBlocksData.Array.data[13].Variables.Array.data[0]
@@ -230368,6 +230416,30 @@ PrefabInstance:
     - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
       propertyPath: _startingBlocksData.Array.data[15].Variables.Array.data[0]
       value: data
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[16].Variables.Array.data[0]
+      value: a
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[17].Variables.Array.data[0]
+      value: nums
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[18].Variables.Array.data[0]
+      value: nums
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[18].Variables.Array.data[1]
+      value: value
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[19].Variables.Array.data[0]
+      value: outer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072622141705077905, guid: 37935460c2eab4f659e2769d2c95750b, type: 3}
+      propertyPath: _startingBlocksData.Array.data[19].Variables.Array.data[1]
+      value: inner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
