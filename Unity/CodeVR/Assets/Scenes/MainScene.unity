@@ -4441,26 +4441,26 @@ MonoBehaviour:
 
     Your response must be plain spoken text only.
 
-    
+
 
     Never
     write programming operators or programming notation as symbols in the response.
     Always speak their meaning in plain English.
 
-    
+
 
     For example, say "equals"
     instead of the equals symbol, "greater than" instead of the greater than symbol,
     "less than" instead of the less than symbol, "plus" instead of the plus symbol,
     "minus" instead of the minus symbol, and "modulo" instead of the percent symbol.
 
-    
+
 
     When
     describing an expression from the student''s program, convert the entire expression
     into natural spoken English. Do not reproduce source-code notation.
 
-    
+
 
     Normal
     sentence punctuation, such as periods, commas, and question marks, is allowed
