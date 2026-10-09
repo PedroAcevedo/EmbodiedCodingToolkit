@@ -34,6 +34,7 @@ public class ChatGPTManager : MonoBehaviour
     public TranscriptManager TranscriptManager;
     public ConversationAnimation ConversationAnimation;
     [SerializeField] private GameObject Thoughtbubble;
+    [SerializeField] private ResponseUI responseUI;
 
     [Header("LLM API")]
     public LLMAPI LLMapi = LLMAPI.OpenAI;
@@ -141,7 +142,11 @@ public class ChatGPTManager : MonoBehaviour
             BuildSystemMessage();
         }
 
+        responseUI.setResponseText("Loading...");
+
         string responseText = await AskLLM(prompt);
+
+        responseUI.setResponseText(responseText);
 
         if (!string.IsNullOrWhiteSpace(responseText))
         {
