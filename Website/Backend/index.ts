@@ -11,7 +11,7 @@ import TaskManager from "./TaskManager";
 dotenv.config();
 
 const app = express();
-// app.use(bodyParser.json()); // Parsing JSON
+app.use(bodyParser.json()); // Parsing JSON
 app.use(bodyParser.urlencoded({ extended: true })); // Parsing Form data
 app.use(Cors());
 
@@ -79,6 +79,21 @@ app.post("/api/notify-code-change", (req, res) => {
     );
   });
   res.send("New code change notified! with following data" + req.body);
+});
+
+app.post("/api/task-order", (req, res) => {
+  taskManager.setTaskOrder(req.body.taskIds);
+
+  wss.clients.forEach((client) => {
+    client.send(
+      JSON.stringify({
+        channel: "taskStatus",
+        data: taskManager.currentTaskStatus,
+      }),
+    );
+  });
+
+  res.send(true);
 });
 
 //start our server

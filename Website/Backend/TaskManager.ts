@@ -19,6 +19,16 @@ export default class TaskManager {
     "all_task_completed",
   ];
 
+  public setTaskOrder(taskIds: string[]) {
+    this.taskOrder = [...taskIds];
+    this.currentTaskIndex = 0;
+    this.currentTaskCompleted = false;
+    this.currentOutput = "";
+    this.failedTest = null;
+    this.testResults = [];
+    this.currentCode = "";
+  }
+
   private get orderedTasks(): Task[] {
     return this.taskOrder.map((taskId) => {
       const task = allTasks.find((task) => task.id === taskId);
