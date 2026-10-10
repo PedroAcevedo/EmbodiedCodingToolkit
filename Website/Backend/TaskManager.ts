@@ -20,7 +20,7 @@ export default class TaskManager {
   ];
 
   public setTaskOrder(taskIds: string[]) {
-    this.taskOrder = [...taskIds];
+    this.taskOrder = [...taskIds, "all_task_completed"];
     this.currentTaskIndex = 0;
     this.currentTaskCompleted = false;
     this.currentOutput = "";
