@@ -149,7 +149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3625313904857680101, guid: ba53e6513444d49d8b71f7abd5484592, type: 3}
       propertyPath: _startValueByVariableName
-      value: input
+      value: letters
       objectReference: {fileID: 0}
     - target: {fileID: 3749887415119312587, guid: ba53e6513444d49d8b71f7abd5484592, type: 3}
       propertyPath: m_Name
@@ -671,7 +671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3625313904857680101, guid: a7b7c513ff7ca481b825d67e545a8637, type: 3}
       propertyPath: _startValueByVariableName
-      value: input
+      value: letters
       objectReference: {fileID: 0}
     - target: {fileID: 3749887415119312587, guid: a7b7c513ff7ca481b825d67e545a8637, type: 3}
       propertyPath: m_Name

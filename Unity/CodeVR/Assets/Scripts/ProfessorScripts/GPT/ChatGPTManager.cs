@@ -82,6 +82,16 @@ public class ChatGPTManager : MonoBehaviour
         return openAI;
     }
 
+    public void SetBehaviorForTask(BehaviorType behaviorType)
+    {
+        BehaviorOption = behaviorType;
+
+        SetBehavior();
+        BuildSystemMessage();
+
+        previousResponseId = null;
+    }
+
     private void InitializeSelectedAPI()
     {
         if (LLMapi == LLMAPI.OpenAI)
