@@ -19,7 +19,7 @@ public class PromptGenerator : MonoBehaviour
 
         RequestInProgress = true;
 
-        TaskStatusResponse taskStatus = taskManager.CurrentTaskStatus;
+        TaskStatusResponse taskStatus = taskManager == null ? null : taskManager.CurrentTaskStatus;
 
         string heldBlocks =
             heldCodeBlockTracker != null
@@ -49,8 +49,7 @@ public class PromptGenerator : MonoBehaviour
             $"Current Code:\n{currentCode}\n\n" +
             $"Currently held blocks:\n{heldBlocks}\n";
 
-        float questionTimestamp =
-            _transcriptManager.GetCurrentTaskTime();
+        float questionTimestamp = _transcriptManager == null ? 0f : _transcriptManager.GetCurrentTaskTime();
 
         chatGPTManager.AskChatGPT(
             prompt,

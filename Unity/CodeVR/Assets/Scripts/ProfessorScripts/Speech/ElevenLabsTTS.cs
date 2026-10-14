@@ -20,6 +20,8 @@ namespace ElevenLabs.Demo
         public GameObject character;
         public GameObject Thoughtbubble;
         public GameObject nextButton;
+        
+        [SerializeField] private TutorialButtonActive _tutorialButton;
         //public GazeTimerTrigger GazeTimerTrigger;
 
         [SerializeField] private ElevenLabsConfiguration configuration;
@@ -104,6 +106,10 @@ namespace ElevenLabs.Demo
                 //end clip, so end animation
                 promptGenerator.RequestInProgress = false;
                 ConverseAnim.GetComponent<ConversationAnimation>().EndAnimation();
+                
+                if (_tutorialButton != null)
+                    _tutorialButton.ActivateStartButton();
+
                 isAnimation = false;
 
                 if (nextButton)

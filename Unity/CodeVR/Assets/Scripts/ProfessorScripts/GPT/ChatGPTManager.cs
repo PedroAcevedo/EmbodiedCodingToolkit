@@ -25,7 +25,9 @@ public enum BehaviorType
 {
     Encouraging,
     Explanation,
-    DirectSolution
+    DirectSolution,
+
+    Tutorial
 }
 
 public class ChatGPTManager : MonoBehaviour
@@ -152,11 +154,13 @@ public class ChatGPTManager : MonoBehaviour
             BuildSystemMessage();
         }
 
-        responseUI.setResponseText("Loading...");
+        if (responseUI != null)
+            responseUI.setResponseText("Loading...");
 
         string responseText = await AskLLM(prompt);
 
-        responseUI.setResponseText(responseText);
+        if (responseUI != null)
+            responseUI.setResponseText(responseText);
 
         if (!string.IsNullOrWhiteSpace(responseText))
         {
@@ -308,7 +312,33 @@ Prefer solutions that use blocks available in the student's environment.
 Even when giving the solution, explain the key reason it works so the student can learn from it.
 Do not add unrelated information or continue teaching beyond what is necessary to answer the student's question.";
         }
+        else if (BehaviorOption == BehaviorType.Tutorial)
+        {
+            Behavior = @"Assistance Level: Tutorial
+You are a friendly and approachable virtual teaching assistant helping a student 
+become familiar with an educational VR programming environment.
+
+The student is currently completing a short tutorial before beginning the main programming activities. 
+Your goal is to help them feel comfortable interacting with you and understand that 
+they can ask you questions when they need assistance.
+
+Respond directly to the student's question using clear, simple, and concise language. 
+Maintain an encouraging and welcoming tone without being overly enthusiastic or 
+providing unnecessary explanations.
+
+If the student asks what you can do, explain that you can help them understand 
+programming concepts, explain how Blockly blocks work, and offer guidance when they get stuck.
+
+If the student asks a programming-related question, answer it helpfully 
+at an introductory level. Do not introduce unrelated programming tasks or 
+overwhelm them with information.
+
+After answering, briefly let the student know that they can begin the main activities when they are ready. 
+Do not claim that the Start button has been activated or unlocked.";
+
+        }
     }
+}
 
     //private void Update()
     //{
@@ -319,4 +349,4 @@ Do not add unrelated information or continue teaching beyond what is necessary t
             //AskChatGPT("Hello!");
         //}
     //}
-}
+
